@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff8f3" />
+    <meta name="description" content="A cozy little mirror puzzle. Turn the prisms and guide a beam of light to the crystal." />
+    <title>Prism Path — Find the light</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3642224896936056" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Prism Path home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span>prism<span class="brand-light">path</span></span>
+        </a>
+        <div class="topbar-note"><span class="sparkle">✦</span> A little light for your day</div>
+        <button class="sound-button" id="soundBtn" type="button" aria-pressed="false" aria-label="Turn sound on">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4H4Zm12.5-2.5a6 6 0 0 1 0 9m2.5-11.5a9.5 9.5 0 0 1 0 14" /></svg>
+          <span id="soundLabel">Sound off</span>
+        </button>
+      </header>
+
+      <section class="intro" id="top">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR DAILY MOMENT OF CALM</p>
+          <h1>Find the <span>light.</span></h1>
+          <p class="intro-copy">Turn the mirrors. Guide the beam. Let the crystal shine.</p>
+        </div>
+        <div class="streak-card" aria-live="polite">
+          <span class="streak-icon" aria-hidden="true">✧</span>
+          <span><strong id="solvedCount">0</strong><small>puzzles solved</small></span>
+        </div>
+      </section>
+
+      <section class="game-layout" aria-label="Prism Path puzzle">
+        <article class="game-card">
+          <div class="puzzle-heading">
+            <div>
+              <div class="level-kicker"><span id="levelNumber">LEVEL 01</span><span class="kicker-line"></span><span id="levelTag">WARM UP</span></div>
+              <h2 id="levelName">First light</h2>
+              <p id="levelDescription">One turn can change everything.</p>
+            </div>
+            <div class="move-pill"><span class="move-orbit" aria-hidden="true">↻</span><span><strong id="moveCount">0</strong><small>moves</small></span></div>
+          </div>
+
+          <div class="board-frame">
+            <div class="board-top-glow" aria-hidden="true"></div>
+            <div class="board" id="board" aria-label="Puzzle board"></div>
+            <svg class="beam-layer" id="beamLayer" aria-hidden="true" preserveAspectRatio="none">
+              <defs>
+                <filter id="beamGlow" x="-100%" y="-100%" width="300%" height="300%">
+                  <feGaussianBlur stdDeviation="0.045" result="blur" />
+                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                </filter>
+              </defs>
+              <polyline id="beamGlowLine" class="beam-glow" pathLength="1" points="" />
+              <polyline id="beamLine" class="beam-line" pathLength="1" points="" />
+            </svg>
+            <div class="board-shine" aria-hidden="true"></div>
+          </div>
+
+          <div class="board-footer">
+            <div class="legend"><span class="legend-source"></span> Light source <span class="legend-mirror">／</span> Tap mirrors to turn</div>
+            <div class="status-chip" id="statusChip"><span class="status-dot"></span><span id="statusText">Beam needs a path</span></div>
+          </div>
+
+          <div class="controls" aria-label="Puzzle controls">
+            <button class="button button-primary" id="traceBtn" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h13m-5-5 5 5-5 5M4 6v12" /></svg>
+              Trace beam
+            </button>
+            <button class="button button-soft" id="undoBtn" type="button" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14 4 9l5-5M4 9h9a6 6 0 0 1 0 12h-2" /></svg>
+              Undo
+            </button>
+            <button class="button button-soft" id="restartBtn" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.8-4L4 9m0-5v5h5m-5 4a8 8 0 0 0 14.8 4L20 15m0 5v-5h-5" /></svg>
+              Restart
+            </button>
+            <button class="button button-hint" id="hintBtn" type="button">
+              <span class="bulb" aria-hidden="true">✦</span> Hint
+            </button>
+          </div>
+          <p class="hint-message" id="hintMessage" aria-live="polite"></p>
+        </article>
+
+        <aside class="side-column">
+          <section class="side-card mission-card">
+            <div class="side-card-title"><span class="mini-prism" aria-hidden="true">✧</span><h3>Your mission</h3></div>
+            <p>Rotate the mirrors so the beam travels from the <b class="cyan-word">glow</b> to the <b class="violet-word">crystal</b>.</p>
+            <div class="mission-example" aria-hidden="true">
+              <span class="example-source"></span><span class="example-beam"></span><span class="example-mirror">／</span><span class="example-arrow">↗</span><span class="example-crystal">✦</span>
+            </div>
+            <p class="tiny-note">A mirror turns with every tap.</p>
+          </section>
+
+          <section class="side-card level-card">
+            <div class="side-card-title"><span class="level-icon" aria-hidden="true">▦</span><h3>Your journey</h3></div>
+            <div class="level-list" id="levelList" aria-label="Choose a level"></div>
+            <div class="journey-progress"><span id="progressLabel">0 of 5 complete</span><span class="progress-track"><span id="progressBar"></span></span></div>
+          </section>
+
+          <section class="quote-card">
+            <span aria-hidden="true">“</span>
+            <p>Small turns can lead to beautiful things.</p>
+            <div class="quote-stars" aria-hidden="true">✦ &nbsp; ✧ &nbsp; ✦</div>
+          </section>
+        </aside>
+      </section>
+
+      <footer class="page-footer">
+        <span>Made for curious minds <span class="footer-heart">♥</span></span>
+        <span>Take your time. The light will wait.</span>
+      </footer>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
