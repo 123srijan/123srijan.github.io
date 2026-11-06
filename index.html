@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Play Stack Panic, a cheerful tower-stacking arcade game. Slide, trim, and stack blocks in Classic or Daily Challenge mode.">
+  <meta name="theme-color" content="#111328">
+  <title>Stack Panic! — Tower Stacking Arcade</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3642224896936056" crossorigin="anonymous"></script>
+  <style>
+    :root { color-scheme: dark; font-family: Arial, sans-serif; background: #111328; color: #f8f7ff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 50% 0%, #30216b 0, #171834 42rem, #101225 100%); }
+    a { color: inherit; }
+    .wrap { width: min(1040px, calc(100% - 2rem)); margin: auto; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #ffffff20; }
+    .brand { color: #ffd43b; font-weight: 900; font-size: 1.2rem; letter-spacing: .05em; text-decoration: none; }
+    .brand span { color: #ff6689; }
+    nav { display: flex; gap: 1.2rem; font-size: .95rem; }
+    nav a { color: #c9c6e8; text-decoration: none; }
+    nav a:hover { color: #fff; }
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; padding: 5.5rem 0 4rem; }
+    .eyebrow { color: #87ed50; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .78rem; }
+    h1 { margin: .7rem 0 1rem; font-size: clamp(2.8rem, 8vw, 5.8rem); line-height: .98; letter-spacing: -.04em; }
+    h1 span { color: #ffbd26; }
+    .intro { max-width: 570px; color: #cbc9e0; font-size: 1.15rem; line-height: 1.7; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem; margin-top: 1.8rem; }
+    .play { display: inline-block; padding: .95rem 1.4rem; border-radius: 999px; background: linear-gradient(100deg, #ffb617, #ff6530); color: #1d1531; font-weight: 800; text-decoration: none; box-shadow: 0 8px 24px #ff6a3340; }
+    .secondary { color: #d7d3f2; }
+    .tower-card { border: 1px solid #8375e555; border-radius: 1.5rem; padding: 1.5rem; background: #201c45d9; box-shadow: 0 22px 70px #07081780; }
+    .tower-card h2 { margin: 0 0 .7rem; color: #fff; }
+    .tower-card p { color: #c4c0e2; line-height: 1.6; }
+    .blocks { display: grid; gap: .5rem; max-width: 230px; margin: 1.5rem auto .4rem; transform: skewY(-7deg); }
+    .blocks i { height: 1.4rem; border-radius: .4rem; background: linear-gradient(90deg, #93f33d, #45cb68); box-shadow: inset 0 -4px #20a84e; }
+    .blocks i:nth-child(1) { width: 64%; margin-left: 32%; background: linear-gradient(90deg,#ffbd27,#ff7f24); }
+    .blocks i:nth-child(2) { width: 76%; margin-left: 18%; }
+    .blocks i:nth-child(3) { width: 90%; margin-left: 7%; }
+    .blocks i:nth-child(4) { width: 100%; }
+    .section { padding: 1rem 0 4rem; }
+    .section h2 { font-size: 2rem; margin-bottom: .5rem; }
+    .section-intro { color: #c4c0e2; line-height: 1.6; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+    .tile { padding: 1.2rem; border-radius: 1rem; border: 1px solid #ffffff1c; background: #191b38; }
+    .tile h3 { margin-top: 0; color: #ffd43b; }
+    .tile p { margin-bottom: 0; color: #c4c0e2; line-height: 1.6; }
+    .howto { color: #d1cee8; line-height: 1.9; padding-left: 1.3rem; }
+    footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding: 1.4rem 0 2rem; border-top: 1px solid #ffffff20; color: #bcb9d6; font-size: .9rem; }
+    footer a { color: #d7d3f2; }
+    @media (max-width: 700px) { .hero { grid-template-columns: 1fr; padding: 3.5rem 0 2.5rem; } .tower-card { max-width: 480px; } .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/">STACK <span>PANIC!</span></a>
+      <nav aria-label="Main navigation"><a href="/stack-panic/">Play</a><a href="/stack-panic/privacy.html">Privacy</a></nav>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">A cheerful tower-stacking arcade game</p>
+          <h1 id="hero-title">Stack high.<br><span>Stay balanced.</span></h1>
+          <p class="intro">Slide each block into place, trim the overhang, and build a tower that reaches the skyline. Play a quick Classic round or take on the shared Daily Challenge.</p>
+          <div class="actions"><a class="play" href="/stack-panic/">Play Stack Panic</a><a class="secondary" href="#how-to-play">How to play</a></div>
+        </div>
+        <aside class="tower-card" aria-label="Stack Panic game overview">
+          <h2>Ready to stack?</h2>
+          <p>Pick a difficulty, watch the moving block, then tap or press Space to drop it. Perfect landings build streaks.</p>
+          <div class="blocks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </aside>
+      </section>
+      <section class="section" aria-labelledby="modes-title">
+        <h2 id="modes-title">Three ways to play</h2>
+        <p class="section-intro">Choose the pace that fits your next round.</p>
+        <div class="grid">
+          <article class="tile"><h3>Classic</h3><p>Stack as high as you can and beat your personal best.</p></article>
+          <article class="tile"><h3>Daily Challenge</h3><p>Play the same seeded block sequence as everyone else today.</p></article>
+          <article class="tile"><h3>Easy, Medium, Hard</h3><p>Start with wider, slower blocks or test your precision at full speed.</p></article>
+        </div>
+      </section>
+      <section class="section" id="how-to-play" aria-labelledby="how-title">
+        <h2 id="how-title">How to play</h2>
+        <ol class="howto">
+          <li>Choose a difficulty and Classic or Daily mode.</li>
+          <li>Tap the screen, click, or press Space to drop a moving block.</li>
+          <li>Line it up carefully: overhanging parts are trimmed away.</li>
+          <li>Build perfect streaks to score higher and recover block width.</li>
+        </ol>
+        <a class="play" href="/stack-panic/">Start a round</a>
+      </section>
+    </main>
+    <footer><span>Stack Panic — a browser arcade game.</span><span><a href="/stack-panic/privacy.html">Privacy</a> · <a href="/stack-panic/">Play the game</a></span></footer>
+  </div>
+</body>
+</html>
