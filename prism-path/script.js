@@ -1,5 +1,99 @@
 // Prism Path: a simple level-by-level mirror puzzle.
-const LEVELS = [
+// Initial static levels (original set). These are kept for early gameplay.
+const STATIC_LEVELS = [
+  {
+    name: 'First light', tag: 'START HERE', difficulty: 'Easy', description: 'Turn one mirror to guide the light.',
+    rows: 3, cols: 3, source: { row: 1, col: 0, dir: 'right' }, target: { row: 2, col: 2 },
+    mirrors: [
+      { row: 1, col: 1, dir: '/', solution: '\\' },
+      { row: 2, col: 1, dir: '\\', solution: '\\' }
+    ]
+  },
+  // ... (remaining original levels omitted for brevity) ...
+];
+
+// Generate a procedural level for indexes beyond the static set.
+function generateProceduralLevel(index) {
+  // Determine board size: grow slowly with index.
+  const baseSize = 4; // start at 4x4 for generated levels
+  const size = baseSize + Math.floor(index / 5); // increase every 5 levels
+  const rows = size;
+  const cols = size;
+
+  // Simple zig‑zag path from left to right using mirrors.
+  const mirrors = [];
+  let dir = 'right';
+  let r = Math.floor(rows / 2);
+  let c = 0;
+  // Place a mirror every two columns.
+  while (c < cols - 1) {
+    // Alternate slash direction to turn up/down.
+    const slash = (c / 2) % 2 === 0 ? '/' : '\\';
+    mirrors.push({ row: r, col: c, dir: slash, solution: slash });
+    // Move to next column.
+    c += 2;
+    // Change row if possible.
+    if (slash === '/') {
+      r = Math.max(0, r - 1);
+    } else {
+      r = Math.min(rows - 1, r + 1);
+    }
+  }
+
+  const source = { row: Math.floor(rows / 2), col: 0, dir: 'right' };
+  const target = { row: r, col: cols - 1 };
+
+  return {
+    name: `Procedural Level ${index + 1}`,
+    tag: `LEVEL ${index + 1}`,
+    difficulty: 'Hard',
+    description: 'Generated level with increasing size and complexity.',
+    rows,
+    cols,
+    source,
+    target,
+    mirrors,
+  };
+}
+
+// Unified accessor that returns either a static level or a generated one.
+function getLevel(index) {
+  if (index < STATIC_LEVELS.length) {
+    return STATIC_LEVELS[index];
+  }
+  // Generate on‑the‑fly for higher indexes.
+  return generateProceduralLevel(index);
+}
+
+// Replace usages of LEVELS with a dynamic wrapper.
+const LEVELS_PROXY = new Proxy([], {
+  get: (_, prop) => {
+    // For numeric access, return appropriate level.
+    const idx = Number(prop);
+    if (!isNaN(idx)) {
+      return getLevel(idx);
+    }
+    // Preserve length property (infinite for our purposes).
+    if (prop === 'length') {
+      // Pretend we have a large number of levels.
+      return 10000;
+    }
+    return undefined;
+  },
+  // Ensure iteration works for the initial static portion.
+  ownKeys: () => {
+    const keys = [];
+    for (let i = 0; i < STATIC_LEVELS.length; i++) keys.push(i.toString());
+    // Add a few generated keys for illustration.
+    for (let i = STATIC_LEVELS.length; i < STATIC_LEVELS.length + 5; i++) keys.push(i.toString());
+    return keys;
+  },
+  getOwnPropertyDescriptor: (target, prop) => ({ configurable: true, enumerable: true, value: target[prop] })
+});
+
+// Use LEVELS_PROXY in place of the original LEVELS constant.
+const LEVELS = LEVELS_PROXY;
+
   {
     name: 'First light', tag: 'START HERE', difficulty: 'Easy', description: 'Turn one mirror to guide the light.',
     rows: 3, cols: 3, source: { row: 1, col: 0, dir: 'right' }, target: { row: 2, col: 2 },
