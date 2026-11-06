@@ -1,27 +1,17 @@
 # Prism Path
 
-A small, self-contained mirror-routing puzzle inspired by the supplied visual reference. Tap a mirror to turn it, then guide the cyan beam into the crystal.
+A simple mirror puzzle with a phone-style dashboard. Turn the mirrors and guide the cyan light to the crystal.
 
 ## Play
 
-Open `index.html` in a browser, or start a local server from this folder with:
+Open index.html in a browser.
 
-```powershell
-python -m http.server 8000
-```
+## How it works
 
-Then visit `http://localhost:8000`.
+- Eight numbered levels unlock one at a time, from Easy to Hard
+- Tap a mirror to turn it; the light path updates right away
+- Use Hint for the next mirror to change, Undo to take back a move, or Restart to reset the level
+- Solved levels and the current level are saved in the browser
+- The page is responsive and works without a build step or game engine
 
-## Included
-
-- Five hand-built puzzles, from a quick warm-up to a final route
-- Mirror rotation, live beam tracing, undo, restart, and hints
-- Level selection and local progress saved in the browser
-- Responsive layout, keyboard-accessible controls, reduced-motion support, and optional sound
-- No build step, backend, or third-party game engine
-
-`levels.json` is a compact puzzle catalog. The playable levels are embedded in `script.js`, so the game also works when `index.html` is opened directly from disk.
-
-## Publishing
-
-The files are ready for a static host such as GitHub Pages. The Google Fonts import is optional; the game falls back to system fonts when it is unavailable.
+levels.json is the editable puzzle catalog. The game data is also embedded in script.js, so opening index.html directly works.

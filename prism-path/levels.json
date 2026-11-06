@@ -1,7 +1,10 @@
 [
-  {"name":"First light","rows":5,"cols":5,"source":{"row":2,"col":0,"dir":"right"},"target":{"row":2,"col":4},"mirrors":[[0,2,"/"],[1,1,"\\"],[1,4,"\\"],[2,1,"/","\\"],[4,1,"\\"],[4,4,"/"]]},
-  {"name":"A brighter turn","rows":5,"cols":5,"source":{"row":0,"col":0,"dir":"down"},"target":{"row":0,"col":4},"mirrors":[[0,2,"/"],[1,2,"\\"],[2,0,"/","\\"],[2,4,"/"],[3,1,"/"],[4,3,"\\"]]},
-  {"name":"The long way home","rows":5,"cols":5,"source":{"row":4,"col":4,"dir":"up"},"target":{"row":4,"col":0},"mirrors":[[0,2,"\\"],[1,2,"/"],[2,0,"/"],[2,4,"/","\\"],[3,1,"\\"],[4,2,"/"]]},
-  {"name":"A little detour","rows":6,"cols":6,"source":{"row":0,"col":0,"dir":"right"},"target":{"row":1,"col":0},"mirrors":[[0,3,"/","\\"],[2,1,"/"],[2,5,"\\"],[4,0,"\\"],[4,3,"/"],[5,4,"/"]]},
-  {"name":"Crystal clear","rows":5,"cols":5,"source":{"row":4,"col":4,"dir":"up"},"target":{"row":4,"col":1},"mirrors":[[0,1,"/"],[1,3,"\\"],[2,1,"/"],[2,4,"/","\\"],[3,2,"\\"]]}
+  {"name":"First light","difficulty":"Easy","rows":3,"cols":3,"source":{"row":1,"col":0,"dir":"right"},"target":{"row":2,"col":2},"mirrors":[[1,1,"/","\\"],[2,1,"\\","\\"]]},
+  {"name":"Across the board","difficulty":"Easy","rows":4,"cols":4,"source":{"row":0,"col":0,"dir":"down"},"target":{"row":0,"col":3},"mirrors":[[2,0,"/","\\"],[2,3,"/","/"],[1,1,"\\"]]},
+  {"name":"Back the other way","difficulty":"Easy","rows":4,"cols":4,"source":{"row":3,"col":3,"dir":"up"},"target":{"row":3,"col":0},"mirrors":[[1,3,"/","\\"],[1,0,"/","/"],[0,1,"\\"],[2,2,"\\"],[2,4,"/"]]},
+  {"name":"A longer route","difficulty":"Medium","rows":5,"cols":5,"source":{"row":0,"col":0,"dir":"right"},"target":{"row":1,"col":0},"mirrors":[[0,2,"/","\\"],[4,2,"/","/"],[4,0,"\\","\\"],[1,4,"/"],[2,4,"\\"],[3,1,"/"]]},
+  {"name":"Light from below","difficulty":"Medium","rows":5,"cols":5,"source":{"row":4,"col":0,"dir":"right"},"target":{"row":0,"col":0},"mirrors":[[4,2,"\\","/"],[1,2,"\\","\\"],[1,0,"\\","\\"],[2,1,"/"],[2,4,"\\"],[3,3,"/"]]},
+  {"name":"Two small turns","difficulty":"Medium","rows":5,"cols":5,"source":{"row":2,"col":0,"dir":"right"},"target":{"row":3,"col":0},"mirrors":[[2,2,"/","\\"],[4,2,"/","/"],[4,0,"/","\\"],[0,2,"\\"],[1,4,"/"],[3,4,"\\"],[4,4,"/"]]},
+  {"name":"A quiet zigzag","difficulty":"Hard","rows":6,"cols":6,"source":{"row":5,"col":0,"dir":"right"},"target":{"row":0,"col":0},"mirrors":[[5,2,"\\","/"],[1,2,"\\","\\"],[1,0,"\\","\\"],[0,4,"/"],[2,1,"\\"],[3,4,"/"],[4,0,"/"],[2,5,"\\"]]},
+  {"name":"Crystal path","difficulty":"Hard","rows":6,"cols":6,"source":{"row":0,"col":0,"dir":"right"},"target":{"row":1,"col":4},"mirrors":[[0,3,"/","\\"],[4,3,"/","/"],[4,1,"/","\\"],[1,1,"/","/"],[0,5,"/"],[2,2,"\\"],[3,0,"/"],[5,4,"\\"],[2,5,"/"]]}
 ]

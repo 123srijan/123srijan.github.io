@@ -1,43 +1,74 @@
-// Prism Path: a self-contained mirror-routing puzzle.
+// Prism Path: a simple level-by-level mirror puzzle.
 const LEVELS = [
   {
-    name: 'First light', tag: 'WARM UP', description: 'One turn can change everything.', par: 1,
-    rows: 5, cols: 5, source: { row: 2, col: 0, dir: 'right' }, target: { row: 2, col: 4 },
+    name: 'First light', tag: 'START HERE', difficulty: 'Easy', description: 'Turn one mirror to guide the light.',
+    rows: 3, cols: 3, source: { row: 1, col: 0, dir: 'right' }, target: { row: 2, col: 2 },
     mirrors: [
-      { row: 0, col: 2, dir: '/' }, { row: 1, col: 1, dir: '\\' }, { row: 1, col: 4, dir: '\\' },
-      { row: 2, col: 1, dir: '/', solution: '\\' }, { row: 4, col: 1, dir: '\\' }, { row: 4, col: 4, dir: '/' }
+      { row: 1, col: 1, dir: '/', solution: '\\' },
+      { row: 2, col: 1, dir: '\\', solution: '\\' }
     ]
   },
   {
-    name: 'A brighter turn', tag: 'EASY', description: 'Let the beam travel across the board.', par: 1,
-    rows: 5, cols: 5, source: { row: 0, col: 0, dir: 'down' }, target: { row: 0, col: 4 },
+    name: 'Across the board', tag: 'LEVEL 2', difficulty: 'Easy', description: 'Make a gentle turn, then reach the gem.',
+    rows: 4, cols: 4, source: { row: 0, col: 0, dir: 'down' }, target: { row: 0, col: 3 },
     mirrors: [
-      { row: 0, col: 2, dir: '/' }, { row: 1, col: 2, dir: '\\' }, { row: 2, col: 0, dir: '/', solution: '\\' },
-      { row: 2, col: 4, dir: '/' }, { row: 3, col: 1, dir: '/' }, { row: 4, col: 3, dir: '\\' }
+      { row: 2, col: 0, dir: '/', solution: '\\' }, { row: 2, col: 3, dir: '/', solution: '/' },
+      { row: 1, col: 1, dir: '\\' }
     ]
   },
   {
-    name: 'The long way home', tag: 'EASY', description: 'A quiet path is waiting on the other side.', par: 1,
-    rows: 5, cols: 5, source: { row: 4, col: 4, dir: 'up' }, target: { row: 4, col: 0 },
+    name: 'Back the other way', tag: 'LEVEL 3', difficulty: 'Easy', description: 'Follow the beam around the corner.',
+    rows: 4, cols: 4, source: { row: 3, col: 3, dir: 'up' }, target: { row: 3, col: 0 },
     mirrors: [
-      { row: 0, col: 2, dir: '\\' }, { row: 1, col: 2, dir: '/' }, { row: 2, col: 0, dir: '/', solution: '/' },
-      { row: 2, col: 4, dir: '/', solution: '\\' }, { row: 3, col: 1, dir: '\\' }, { row: 4, col: 2, dir: '/' }
+      { row: 1, col: 3, dir: '/', solution: '\\' }, { row: 1, col: 0, dir: '/', solution: '/' },
+      { row: 0, col: 1, dir: '\\' }, { row: 2, col: 2, dir: '\\' }
     ]
   },
   {
-    name: 'A little detour', tag: 'THINK AHEAD', description: 'Take a corner, then follow the glow.', par: 1,
-    rows: 6, cols: 6, source: { row: 0, col: 0, dir: 'right' }, target: { row: 1, col: 0 },
+    name: 'A longer route', tag: 'LEVEL 4', difficulty: 'Medium', description: 'Three mirrors make the path.',
+    rows: 5, cols: 5, source: { row: 0, col: 0, dir: 'right' }, target: { row: 1, col: 0 },
     mirrors: [
-      { row: 0, col: 3, dir: '/', solution: '\\' }, { row: 2, col: 1, dir: '/' }, { row: 2, col: 5, dir: '\\' },
-      { row: 4, col: 0, dir: '\\' }, { row: 4, col: 3, dir: '/', solution: '/' }, { row: 5, col: 4, dir: '/' }
+      { row: 0, col: 2, dir: '/', solution: '\\' }, { row: 4, col: 2, dir: '/', solution: '/' },
+      { row: 4, col: 0, dir: '\\', solution: '\\' }, { row: 1, col: 4, dir: '/' },
+      { row: 2, col: 4, dir: '\\' }, { row: 3, col: 1, dir: '/' }
     ]
   },
   {
-    name: 'Crystal clear', tag: 'FINAL GLOW', description: 'One last turn, and the crystal is yours.', par: 1,
-    rows: 5, cols: 5, source: { row: 4, col: 4, dir: 'up' }, target: { row: 4, col: 1 },
+    name: 'Light from below', tag: 'LEVEL 5', difficulty: 'Medium', description: 'Guide the beam across two turns.',
+    rows: 5, cols: 5, source: { row: 4, col: 0, dir: 'right' }, target: { row: 0, col: 0 },
     mirrors: [
-      { row: 0, col: 1, dir: '/' }, { row: 1, col: 3, dir: '\\' }, { row: 2, col: 1, dir: '/' },
-      { row: 2, col: 4, dir: '/', solution: '\\' }, { row: 3, col: 2, dir: '\\' }
+      { row: 4, col: 2, dir: '\\', solution: '/' }, { row: 1, col: 2, dir: '\\', solution: '\\' },
+      { row: 1, col: 0, dir: '\\', solution: '\\' }, { row: 2, col: 1, dir: '/' },
+      { row: 2, col: 4, dir: '\\' }, { row: 3, col: 3, dir: '/' }
+    ]
+  },
+  {
+    name: 'Two small turns', tag: 'LEVEL 6', difficulty: 'Medium', description: 'Set two mirrors, then let it glow.',
+    rows: 5, cols: 5, source: { row: 2, col: 0, dir: 'right' }, target: { row: 3, col: 0 },
+    mirrors: [
+      { row: 2, col: 2, dir: '/', solution: '\\' }, { row: 4, col: 2, dir: '/', solution: '/' },
+      { row: 4, col: 0, dir: '/', solution: '\\' }, { row: 0, col: 2, dir: '\\' },
+      { row: 1, col: 4, dir: '/' }, { row: 3, col: 4, dir: '\\' }, { row: 4, col: 4, dir: '/' }
+    ]
+  },
+  {
+    name: 'A quiet zigzag', tag: 'LEVEL 7', difficulty: 'Hard', description: 'Take the long way to the crystal.',
+    rows: 6, cols: 6, source: { row: 5, col: 0, dir: 'right' }, target: { row: 0, col: 0 },
+    mirrors: [
+      { row: 5, col: 2, dir: '\\', solution: '/' }, { row: 1, col: 2, dir: '\\', solution: '\\' },
+      { row: 1, col: 0, dir: '\\', solution: '\\' }, { row: 0, col: 4, dir: '/' },
+      { row: 2, col: 1, dir: '\\' }, { row: 3, col: 4, dir: '/' },
+      { row: 4, col: 0, dir: '/' }, { row: 2, col: 5, dir: '\\' }
+    ]
+  },
+  {
+    name: 'Crystal path', tag: 'FINAL LEVEL', difficulty: 'Hard', description: 'Line up both mirrors to finish.',
+    rows: 6, cols: 6, source: { row: 0, col: 0, dir: 'right' }, target: { row: 1, col: 4 },
+    mirrors: [
+      { row: 0, col: 3, dir: '/', solution: '\\' }, { row: 4, col: 3, dir: '/', solution: '/' },
+      { row: 4, col: 1, dir: '/', solution: '\\' }, { row: 1, col: 1, dir: '/', solution: '/' },
+      { row: 0, col: 5, dir: '/' }, { row: 2, col: 2, dir: '\\' },
+      { row: 3, col: 0, dir: '/' }, { row: 5, col: 4, dir: '\\' }, { row: 2, col: 5, dir: '/' }
     ]
   }
 ];
@@ -47,7 +78,7 @@ const DIRECTIONS = {
 };
 const SLASH_TURNS = { right: 'up', up: 'right', left: 'down', down: 'left' };
 const BACKSLASH_TURNS = { right: 'down', down: 'right', left: 'up', up: 'left' };
-const STORAGE_KEY = 'prism-path-progress-v1';
+const STORAGE_KEY = 'prism-path-dashboard-v2';
 
 const board = document.querySelector('#board');
 const beamLayer = document.querySelector('#beamLayer');
@@ -57,9 +88,10 @@ const levelList = document.querySelector('#levelList');
 const statusChip = document.querySelector('#statusChip');
 const statusText = document.querySelector('#statusText');
 const hintMessage = document.querySelector('#hintMessage');
+const nextButton = document.querySelector('#nextBtn');
 const toast = document.querySelector('#toast');
 let progress = readProgress();
-let activeLevel = Math.min(progress.activeLevel || 0, LEVELS.length - 1);
+let activeLevel = Math.min(Math.max(0, Number(progress.activeLevel) || 0), unlockedThrough());
 let currentMirrors = [];
 let history = [];
 let moveCount = 0;
@@ -68,14 +100,23 @@ let audioContext;
 
 function readProgress() {
   try {
-    const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-    return { solved: Array.isArray(value.solved) ? value.solved : [], activeLevel: Number(value.activeLevel) || 0 };
-  } catch { return { solved: [], activeLevel: 0 }; }
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    const solved = Array.isArray(saved.solved) ? saved.solved.filter(index => Number.isInteger(index) && index >= 0 && index < LEVELS.length) : [];
+    return { solved: Array.from(new Set(solved)), activeLevel: Number(saved.activeLevel) || 0 };
+  } catch {
+    return { solved: [], activeLevel: 0 };
+  }
+}
+
+function unlockedThrough() {
+  const highestSolved = progress.solved.reduce((highest, index) => Math.max(highest, index), -1);
+  return Math.min(LEVELS.length - 1, highestSolved + 1);
 }
 
 function saveProgress() {
   progress.activeLevel = activeLevel;
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); } catch { /* play still works when storage is unavailable */ }
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); } catch { /* Local saving is optional. */ }
+  renderDashboard();
   renderJourney();
 }
 
@@ -83,22 +124,24 @@ function level() { return LEVELS[activeLevel]; }
 function mirrorAt(row, col) { return currentMirrors.find(mirror => mirror.row === row && mirror.col === col); }
 
 function loadLevel(index) {
+  if (index < 0 || index >= LEVELS.length || index > unlockedThrough()) return;
   activeLevel = index;
   const puzzle = level();
   currentMirrors = puzzle.mirrors.map(mirror => ({ ...mirror }));
-  moveCount = 0;
   history = [];
+  moveCount = 0;
   hintMessage.textContent = '';
-  document.querySelector('#levelNumber').textContent = `LEVEL ${String(index + 1).padStart(2, '0')}`;
+  nextButton.hidden = true;
+  document.querySelector('#levelNumber').textContent = 'Level ' + (index + 1);
   document.querySelector('#levelTag').textContent = puzzle.tag;
   document.querySelector('#levelName').textContent = puzzle.name;
+  document.querySelector('#difficulty').textContent = puzzle.difficulty;
   document.querySelector('#levelDescription').textContent = puzzle.description;
   document.querySelector('#moveCount').textContent = '0';
-  board.style.gridTemplateColumns = `repeat(${puzzle.cols}, 1fr)`;
-  board.style.gridTemplateRows = `repeat(${puzzle.rows}, 1fr)`;
-  board.setAttribute('aria-label', `${puzzle.name}, ${puzzle.rows} by ${puzzle.cols} puzzle board`);
+  board.style.gridTemplateColumns = 'repeat(' + puzzle.cols + ', 1fr)';
+  board.style.gridTemplateRows = 'repeat(' + puzzle.rows + ', 1fr)';
+  board.setAttribute('aria-label', puzzle.name + ', ' + puzzle.rows + ' by ' + puzzle.cols + ' puzzle board');
   renderBoard();
-  renderJourney();
   tracePath(false);
   updateControls();
   saveProgress();
@@ -106,7 +149,7 @@ function loadLevel(index) {
 
 function renderBoard() {
   const puzzle = level();
-  const items = [];
+  const cells = [];
   for (let row = 0; row < puzzle.rows; row++) {
     for (let col = 0; col < puzzle.cols; col++) {
       const mirror = mirrorAt(row, col);
@@ -114,16 +157,17 @@ function renderBoard() {
       const isTarget = puzzle.target.row === row && puzzle.target.col === col;
       const cell = document.createElement('button');
       cell.type = 'button';
-      cell.className = `cell ${mirror ? 'mirror-cell' : isSource ? 'source-cell' : isTarget ? 'target-cell' : 'empty'}`;
+      cell.className = 'cell ' + (mirror ? 'mirror-cell' : isSource ? 'source-cell' : isTarget ? 'target-cell' : 'empty');
       cell.dataset.row = row;
       cell.dataset.col = col;
       if (mirror) {
-        cell.setAttribute('aria-label', `Mirror, row ${row + 1}, column ${col + 1}, ${mirror.dir === '/' ? 'slash' : 'backslash'}; tap to turn`);
-        cell.innerHTML = `<span class="mirror-surface" aria-hidden="true"></span><svg class="mirror-stroke" viewBox="0 0 100 100" aria-hidden="true"><line x1="${mirror.dir === '/' ? 19 : 81}" y1="${mirror.dir === '/' ? 81 : 19}" x2="${mirror.dir === '/' ? 81 : 19}" y2="${mirror.dir === '/' ? 19 : 81}" /></svg>`;
+        const slash = mirror.dir === '/';
+        cell.setAttribute('aria-label', 'Mirror at row ' + (row + 1) + ', column ' + (col + 1) + ', ' + (slash ? 'slash' : 'backslash') + '; tap to turn');
+        cell.innerHTML = '<span class="mirror-surface" aria-hidden="true"></span><svg class="mirror-stroke" viewBox="0 0 100 100" aria-hidden="true"><line x1="' + (slash ? 19 : 81) + '" y1="' + (slash ? 81 : 19) + '" x2="' + (slash ? 81 : 19) + '" y2="' + (slash ? 19 : 81) + '" /></svg>';
       } else if (isSource) {
         cell.disabled = true;
         cell.tabIndex = -1;
-        cell.setAttribute('aria-label', `Light source, pointing ${puzzle.source.dir}`);
+        cell.setAttribute('aria-label', 'Light source, pointing ' + puzzle.source.dir);
         cell.innerHTML = '<span class="source-core" aria-hidden="true"></span>';
       } else if (isTarget) {
         cell.disabled = true;
@@ -135,10 +179,10 @@ function renderBoard() {
         cell.tabIndex = -1;
         cell.setAttribute('aria-hidden', 'true');
       }
-      items.push(cell);
+      cells.push(cell);
     }
   }
-  board.replaceChildren(...items);
+  board.replaceChildren(...cells);
   board.onclick = event => {
     const button = event.target.closest('.mirror-cell');
     if (button) rotateMirror(Number(button.dataset.row), Number(button.dataset.col));
@@ -148,7 +192,7 @@ function renderBoard() {
 function rotateMirror(row, col) {
   const mirror = mirrorAt(row, col);
   if (!mirror) return;
-  history.push({ row, col, dir: mirror.dir, moveCount });
+  history.push({ row: row, col: col, dir: mirror.dir, moveCount: moveCount });
   mirror.dir = mirror.dir === '/' ? '\\' : '/';
   moveCount++;
   document.querySelector('#moveCount').textContent = String(moveCount);
@@ -159,22 +203,22 @@ function rotateMirror(row, col) {
   playTone(520, .045);
 }
 
-function tracePath(animate = true) {
+function tracePath() {
   const puzzle = level();
   let row = puzzle.source.row;
   let col = puzzle.source.col;
-  let dir = puzzle.source.dir;
-  const points = [{ row, col }];
+  let direction = puzzle.source.dir;
+  const points = [{ row: row, col: col }];
   const visited = new Set();
   let solved = false;
   let looped = false;
   let steps = 0;
 
   while (steps++ < puzzle.rows * puzzle.cols * 4 + 8) {
-    const state = `${row},${col},${dir}`;
+    const state = row + ',' + col + ',' + direction;
     if (visited.has(state)) { looped = true; break; }
     visited.add(state);
-    const delta = DIRECTIONS[dir];
+    const delta = DIRECTIONS[direction];
     const nextRow = row + delta.row;
     const nextCol = col + delta.col;
     if (nextRow < 0 || nextRow >= puzzle.rows || nextCol < 0 || nextCol >= puzzle.cols) {
@@ -183,52 +227,50 @@ function tracePath(animate = true) {
     }
     row = nextRow;
     col = nextCol;
-    points.push({ row, col });
+    points.push({ row: row, col: col });
     if (row === puzzle.target.row && col === puzzle.target.col) { solved = true; break; }
     const mirror = mirrorAt(row, col);
-    if (mirror) dir = (mirror.dir === '/' ? SLASH_TURNS : BACKSLASH_TURNS)[dir];
+    if (mirror) direction = (mirror.dir === '/' ? SLASH_TURNS : BACKSLASH_TURNS)[direction];
   }
 
-  const coordinates = points.map(point => `${point.col + .5},${point.row + .5}`).join(' ');
-  const viewWidth = puzzle.cols;
-  const viewHeight = puzzle.rows;
-  beamLayer.setAttribute('viewBox', `0 0 ${viewWidth} ${viewHeight}`);
+  const coordinates = points.map(point => (point.col + .5) + ',' + (point.row + .5)).join(' ');
+  beamLayer.setAttribute('viewBox', '0 0 ' + puzzle.cols + ' ' + puzzle.rows);
   beamLine.setAttribute('points', coordinates);
   beamGlowLine.setAttribute('points', coordinates);
-  beamLayer.classList.remove('trace');
-  if (animate) {
-    void beamLayer.getBoundingClientRect();
-    beamLayer.classList.add('trace');
-  }
   board.querySelector('.target-cell')?.classList.toggle('lit', solved);
   statusChip.classList.toggle('is-lit', solved);
-  statusText.textContent = solved ? 'Crystal reached!' : looped ? 'The beam loops back' : 'Beam needs a path';
-  if (solved) handleSolved();
-  return { solved, looped };
+  if (solved) {
+    statusText.textContent = activeLevel === LEVELS.length - 1 ? 'All levels complete!' : 'Gem reached! Nice work.';
+    handleSolved();
+  } else {
+    nextButton.hidden = true;
+    statusText.textContent = looped ? 'The light loops back. Try another turn.' : 'Tap a mirror to turn it.';
+  }
+  return { solved: solved, looped: looped };
 }
 
 function handleSolved() {
   const firstSolve = !progress.solved.includes(activeLevel);
   if (firstSolve) progress.solved.push(activeLevel);
+  if (activeLevel < LEVELS.length - 1) {
+    nextButton.hidden = false;
+    nextButton.textContent = 'Next level: ' + (activeLevel + 2) + ' →';
+  } else {
+    nextButton.hidden = true;
+  }
   saveProgress();
-  document.querySelector('.game-card').classList.add('celebration');
-  setTimeout(() => document.querySelector('.game-card')?.classList.remove('celebration'), 550);
   if (firstSolve) {
     playTone(790, .11);
-    showToast(activeLevel === LEVELS.length - 1 ? 'Every crystal is glowing. Beautifully done!' : 'Crystal glowing! A new puzzle is ready.');
+    showToast(activeLevel === LEVELS.length - 1 ? 'All eight levels cleared!' : 'Level cleared. The next one is ready.');
   }
 }
 
-function updateControls() {
-  document.querySelector('#undoBtn').disabled = history.length === 0;
-}
-
 function undo() {
-  const last = history.pop();
-  if (!last) return;
-  const mirror = mirrorAt(last.row, last.col);
-  mirror.dir = last.dir;
-  moveCount = last.moveCount;
+  const previous = history.pop();
+  if (!previous) return;
+  const mirror = mirrorAt(previous.row, previous.col);
+  mirror.dir = previous.dir;
+  moveCount = previous.moveCount;
   document.querySelector('#moveCount').textContent = String(moveCount);
   hintMessage.textContent = '';
   renderBoard();
@@ -242,6 +284,7 @@ function restart() {
   moveCount = 0;
   document.querySelector('#moveCount').textContent = '0';
   hintMessage.textContent = '';
+  nextButton.hidden = true;
   renderBoard();
   tracePath(false);
   updateControls();
@@ -250,36 +293,51 @@ function restart() {
 function hint() {
   const mismatch = currentMirrors.find(mirror => mirror.solution && mirror.dir !== mirror.solution);
   if (!mismatch) {
-    hintMessage.textContent = 'Everything is lined up. Follow the beam to the crystal.';
+    hintMessage.textContent = 'Follow the light to the gem.';
     return;
   }
-  const index = mismatch.row * level().cols + mismatch.col;
-  const cell = board.children[index];
+  const cellIndex = mismatch.row * level().cols + mismatch.col;
+  const cell = board.children[cellIndex];
   cell.classList.add('hint-highlight');
-  setTimeout(() => cell?.classList.remove('hint-highlight'), 1550);
-  hintMessage.textContent = `Try turning the glowing mirror to ${mismatch.solution === '/' ? 'a slash /' : 'a backslash \\'}.`;
+  setTimeout(() => cell?.classList.remove('hint-highlight'), 1500);
+  hintMessage.textContent = 'Tap the glowing mirror once, then follow the light.';
+}
+
+function renderDashboard() {
+  const solvedCount = progress.solved.length;
+  document.querySelector('#solvedCount').textContent = String(solvedCount);
+  document.querySelector('#progressLabel').textContent = solvedCount + ' / ' + LEVELS.length;
+  const percentage = solvedCount / LEVELS.length * 100;
+  document.querySelector('#progressBar').style.width = percentage + '%';
+  document.querySelector('.progress-track').setAttribute('aria-valuenow', String(solvedCount));
 }
 
 function renderJourney() {
-  document.querySelector('#solvedCount').textContent = String(progress.solved.length);
-  document.querySelector('#progressLabel').textContent = `${progress.solved.length} of ${LEVELS.length} complete`;
-  document.querySelector('#progressBar').style.width = `${progress.solved.length / LEVELS.length * 100}%`;
+  const canReach = unlockedThrough();
   levelList.replaceChildren(...LEVELS.map((puzzle, index) => {
+    const complete = progress.solved.includes(index);
+    const locked = index > canReach;
     const button = document.createElement('button');
     button.type = 'button';
-    button.className = `level-button${index === activeLevel ? ' active' : ''}`;
+    button.className = 'level-button' + (index === activeLevel ? ' active' : '') + (complete ? ' complete' : '') + (locked ? ' locked' : '');
+    button.disabled = locked;
     button.setAttribute('aria-current', index === activeLevel ? 'step' : 'false');
-    button.innerHTML = `<span class="level-number">${String(index + 1).padStart(2, '0')}</span><span class="level-title">${puzzle.name}</span>${progress.solved.includes(index) ? '<span class="level-check" aria-label="complete">✓</span>' : ''}`;
+    button.setAttribute('aria-label', 'Level ' + (index + 1) + (locked ? ', locked' : complete ? ', complete' : ', available') + ': ' + puzzle.name);
+    button.textContent = String(index + 1);
     button.addEventListener('click', () => loadLevel(index));
     return button;
   }));
+}
+
+function updateControls() {
+  document.querySelector('#undoBtn').disabled = history.length === 0;
 }
 
 function showToast(message) {
   toast.textContent = message;
   toast.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2300);
 }
 
 function playTone(frequency, duration) {
@@ -295,16 +353,13 @@ function playTone(frequency, duration) {
     oscillator.connect(gain).connect(audioContext.destination);
     oscillator.start();
     oscillator.stop(audioContext.currentTime + duration);
-  } catch { /* audio is optional */ }
+  } catch { /* Sound is optional. */ }
 }
 
-document.querySelector('#traceBtn').addEventListener('click', () => {
-  tracePath(true);
-  playTone(660, .07);
-});
 document.querySelector('#undoBtn').addEventListener('click', undo);
 document.querySelector('#restartBtn').addEventListener('click', restart);
 document.querySelector('#hintBtn').addEventListener('click', hint);
+nextButton.addEventListener('click', () => loadLevel(activeLevel + 1));
 document.querySelector('#soundBtn').addEventListener('click', event => {
   const enabled = event.currentTarget.getAttribute('aria-pressed') !== 'true';
   event.currentTarget.setAttribute('aria-pressed', String(enabled));
