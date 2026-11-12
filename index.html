@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#c9f4d8">
-  <meta name="description" content="Find your next quick game at Srijan’s Arcade. Play Star Patrol and Prism Path, or discover favorite puzzle, sports, and arcade games.">
-  <title>Srijan’s Arcade — Pick a game and play</title>
+  <meta name="theme-color" content="#bcebd2">
+  <meta name="description" content="Play original free browser games made by Srijan: space battles, cricket, snake, bubble shooter, block puzzles, and more.">
+  <title>Srijan’s Arcade — Original games, made to play</title>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3642224896936056" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="home.css">
   <script src="home.js" defer></script>
@@ -17,65 +17,63 @@
   </header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow"><span class="sparkle" aria-hidden="true">✦</span> YOUR NEXT BREAK STARTS HERE</p>
-      <h1 id="hero-title">Pick a game.<br><span>Make it a good one.</span></h1>
-      <p class="hero-copy">Quick puzzles, playful sports, and a space battle made by Srijan. Choose a card and jump right in.</p>
+      <div class="hero-stars" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i></div>
+      <p class="eyebrow"><span class="sparkle" aria-hidden="true">✦</span> THE ARCADE IS YOURS</p>
+      <h1 id="hero-title">Pick a game.<br><span>Enter the fun.</span></h1>
+      <p class="hero-copy">Seven original games, built for this little corner of the internet. No detours. Just press play.</p>
       <form class="search-form" role="search" onsubmit="return false">
         <label class="visually-hidden" for="gameSearch">Search games</label>
         <span class="search-icon" aria-hidden="true">⌕</span>
-        <input id="gameSearch" type="search" autocomplete="off" placeholder="What do you want to play?">
+        <input id="gameSearch" type="search" autocomplete="off" placeholder="Find your next favorite">
         <button id="clearSearch" class="clear-search" type="button" aria-label="Clear search" hidden>×</button>
       </form>
       <div class="category-list" role="group" aria-label="Filter games by category">
-        <button class="category-chip active" type="button" data-filter="all" aria-pressed="true">All games <span>8</span></button>
+        <button class="category-chip active" type="button" data-filter="all" aria-pressed="true">All games <span>7</span></button>
         <button class="category-chip" type="button" data-filter="action" aria-pressed="false">Action</button>
         <button class="category-chip" type="button" data-filter="puzzle" aria-pressed="false">Puzzle</button>
         <button class="category-chip" type="button" data-filter="sports" aria-pressed="false">Sports</button>
         <button class="category-chip" type="button" data-filter="arcade" aria-pressed="false">Arcade</button>
       </div>
+      <div class="hero-orbit" aria-hidden="true"><span>✳</span><i></i><b></b></div>
     </section>
 
     <section class="library" id="games" aria-labelledby="games-title">
-      <div class="library-heading"><div><p class="eyebrow small-eyebrow">THE GAME SHELF</p><h2 id="games-title">Choose your next game</h2></div><span id="resultCount" class="result-count" aria-live="polite">8 games</span></div>
+      <div class="library-heading"><div><p class="eyebrow small-eyebrow">SRIJAN’S GAME SHELF</p><h2 id="games-title">Made here. Play anywhere.</h2></div><span id="resultCount" class="result-count" aria-live="polite">7 games</span></div>
       <div class="game-grid" id="gameGrid">
-        <a class="game-card" href="star-patrol/" data-name="Srijan’s Star Patrol" data-categories="action arcade" aria-label="Play Srijan’s Star Patrol">
-          <div class="game-art art-star"><span class="game-logo-label">SRIJAN’S ORIGINAL</span><span class="game-logo star-logo">✦ STAR<br><b>PATROL</b></span><svg class="ship-art" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 10 65 62 50 54 35 62Z"/><path d="m39 58-20 18 26-8M61 58l20 18-26-8"/><circle cx="50" cy="43" r="5"/></svg><span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span></div>
-          <div class="game-card-copy"><span class="game-category">ACTION · ARCADE</span><span class="game-card-title">Star Patrol</span><span class="game-card-meta">Defend the galaxy from enemy waves.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        <a class="game-card" href="star-patrol/" data-name="Star Patrol Space War" data-categories="action arcade">
+          <div class="game-art art-star"><span class="game-logo-label">SPACE BATTLE</span><span class="game-logo star-logo">STAR<br><b>PATROL</b></span><svg class="ship-art" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 10 65 62 50 54 35 62Z"/><path d="m39 58-20 18 26-8M61 58l20 18-26-8"/><circle cx="50" cy="43" r="5"/></svg><span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span></div>
+          <div class="game-card-copy"><span class="game-category">ACTION · ARCADE</span><span class="game-card-title">Star Patrol</span><span class="game-card-meta">Fight through 50 escalating space-war waves.</span><span class="play-link">Launch mission <span aria-hidden="true">↗</span></span></div>
         </a>
-        <a class="game-card" href="prism-path/" data-name="Prism Path" data-categories="puzzle" aria-label="Play Prism Path">
-          <div class="game-art art-prism"><span class="game-logo-label">SRIJAN’S ORIGINAL</span><span class="game-logo prism-logo">PRISM<br><b>PATH</b></span><svg class="prism-art" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 13 78 50 50 87 22 50Z"/><path d="M50 13v74M22 50h56"/><path class="beam-art" d="M10 50h23l17-26 17 26h23"/></svg></div>
-          <div class="game-card-copy"><span class="game-category">PUZZLE</span><span class="game-card-title">Prism Path</span><span class="game-card-meta">Turn mirrors and guide the light.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        <a class="game-card" href="prism-path/" data-name="Prism Path Mirror Puzzle" data-categories="puzzle">
+          <div class="game-art art-prism"><span class="game-logo-label">60 LIGHT PUZZLES</span><span class="game-logo prism-logo">PRISM<br><b>PATH</b></span><svg class="prism-art" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 13 78 50 50 87 22 50Z"/><path d="M50 13v74M22 50h56"/><path class="beam-art" d="M10 50h23l17-26 17 26h23"/></svg></div>
+          <div class="game-card-copy"><span class="game-category">PUZZLE</span><span class="game-card-title">Prism Path</span><span class="game-card-meta">Turn mirrors, guide the beam, clear 60 levels.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
         </a>
-        <a class="game-card" href="https://123srijan.github.io/stack-panic/" data-name="Stack Panic" data-categories="puzzle arcade" aria-label="Play Stack Panic">
-          <div class="game-art art-stack"><span class="game-logo-label">ARCADE FAVORITE</span><span class="game-logo stack-logo">STACK<br><b>PANIC!</b></span><div class="stack-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
-          <div class="game-card-copy"><span class="game-category">PUZZLE · ARCADE</span><span class="game-card-title">Stack Panic!</span><span class="game-card-meta">Line up the blocks. Build a tower.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        <a class="game-card" href="stack-panic/" data-name="Stack Panic Tower Builder" data-categories="arcade puzzle">
+          <div class="game-art art-stack"><span class="game-logo-label">SRIJAN ORIGINAL</span><span class="game-logo stack-logo">STACK<br><b>PANIC!</b></span><div class="stack-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+          <div class="game-card-copy"><span class="game-category">ARCADE · SKILL</span><span class="game-card-title">Stack Panic</span><span class="game-card-meta">Drop moving platforms. Build a sky-high tower.</span><span class="play-link">Build a tower <span aria-hidden="true">↗</span></span></div>
         </a>
-        <a class="game-card" href="https://blockblast-2.io/" target="_blank" rel="noopener noreferrer" data-name="Block Blast 2" data-categories="puzzle arcade" aria-label="Play Block Blast 2 on its website">
-          <div class="game-art art-block"><span class="game-logo-label">PUZZLE PICK</span><span class="game-logo block-logo">BLOCK<br><b>BLAST 2</b></span><div class="block-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-          <div class="game-card-copy"><span class="game-category">PUZZLE · ARCADE</span><span class="game-card-title">Block Blast 2</span><span class="game-card-meta">Fit the shapes and clear the board.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        <a class="game-card" href="block-workshop/" data-name="Block Workshop Block Puzzle" data-categories="puzzle arcade">
+          <div class="game-art art-block"><span class="game-logo-label">SRIJAN ORIGINAL</span><span class="game-logo block-logo">BLOCK<br><b>WORKSHOP</b></span><div class="block-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="game-card-copy"><span class="game-category">PUZZLE · ARCADE</span><span class="game-card-title">Block Workshop</span><span class="game-card-meta">Place shapes, clear lines, chase a new high score.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
         </a>
-        <a class="game-card" href="https://doodlecricket.github.io/" target="_blank" rel="noopener noreferrer" data-name="Doodle Cricket" data-categories="sports" aria-label="Play Doodle Cricket on its website">
-          <div class="game-art art-cricket"><span class="game-logo-label">SPORTS</span><span class="game-logo cricket-logo">DOODLE<br><b>CRICKET</b></span><svg class="cricket-art" viewBox="0 0 120 100" aria-hidden="true"><path d="M38 82 83 20l10 7-45 62Z"/><circle cx="84" cy="72" r="11"/><path d="M20 73h23M20 80h23M20 87h23"/></svg></div>
-          <div class="game-card-copy"><span class="game-category">SPORTS</span><span class="game-card-title">Doodle Cricket</span><span class="game-card-meta">Swing for the boundary.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        <a class="game-card" href="cricket-cup/" data-name="Cricket Cup Super Over" data-categories="sports arcade">
+          <div class="game-art art-cricket"><span class="game-logo-label">SRIJAN ORIGINAL</span><span class="game-logo cricket-logo">CRICKET<br><b>CUP</b></span><svg class="cricket-art" viewBox="0 0 120 100" aria-hidden="true"><path d="M38 82 83 20l10 7-45 62Z"/><circle cx="84" cy="72" r="11"/><path d="M20 73h23M20 80h23M20 87h23"/></svg></div>
+          <div class="game-card-copy"><span class="game-category">SPORTS · TIMING</span><span class="game-card-title">Cricket Cup</span><span class="game-card-meta">Read the delivery and time your shot to win.</span><span class="play-link">Take the crease <span aria-hidden="true">↗</span></span></div>
         </a>
-        <a class="game-card" href="https://doodlecricket.github.io/doodle-baseball" target="_blank" rel="noopener noreferrer" data-name="Doodle Baseball" data-categories="sports" aria-label="Play Doodle Baseball on its website">
-          <div class="game-art art-baseball"><span class="game-logo-label">SPORTS</span><span class="game-logo baseball-logo">DOODLE<br><b>BASEBALL</b></span><svg class="baseball-art" viewBox="0 0 120 100" aria-hidden="true"><path d="M31 82 82 20l11 9-52 62Z"/><circle cx="85" cy="72" r="12"/><path d="M80 64c7 6 9 11 8 17M91 67c-7 6-10 11-10 17"/></svg></div>
-          <div class="game-card-copy"><span class="game-category">SPORTS</span><span class="game-card-title">Doodle Baseball</span><span class="game-card-meta">Step up to the plate and swing.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        <a class="game-card" href="snake-run/" data-name="Snake Run Classic Arcade" data-categories="arcade">
+          <div class="game-art art-snake"><span class="game-logo-label">SRIJAN ORIGINAL</span><span class="game-logo snake-logo">SNAKE<br><b>RUN</b></span><svg class="snake-art" viewBox="0 0 130 90" aria-hidden="true"><path d="M18 68h29V49h27V30h31"/><circle cx="108" cy="30" r="12"/><circle class="snake-eye" cx="112" cy="27" r="2"/><circle class="snake-eye" cx="112" cy="33" r="2"/></svg></div>
+          <div class="game-card-copy"><span class="game-category">ARCADE · CLASSIC</span><span class="game-card-title">Snake Run</span><span class="game-card-meta">Grow longer, turn carefully, beat your best.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
         </a>
-        <a class="game-card" href="https://doodlecricket.github.io/doodle-snake" target="_blank" rel="noopener noreferrer" data-name="Doodle Snake" data-categories="arcade" aria-label="Play Doodle Snake on its website">
-          <div class="game-art art-snake"><span class="game-logo-label">ARCADE</span><span class="game-logo snake-logo">DOODLE<br><b>SNAKE</b></span><svg class="snake-art" viewBox="0 0 130 90" aria-hidden="true"><path d="M18 68h29V49h27V30h31"/><circle cx="108" cy="30" r="12"/><circle class="snake-eye" cx="112" cy="27" r="2"/><circle class="snake-eye" cx="112" cy="33" r="2"/></svg></div>
-          <div class="game-card-copy"><span class="game-category">ARCADE</span><span class="game-card-title">Doodle Snake</span><span class="game-card-meta">Grow your snake. Dodge your tail.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
-        </a>
-        <a class="game-card" href="https://www.bubbleshooter.com/" target="_blank" rel="noopener noreferrer" data-name="Bubble Shooter" data-categories="puzzle arcade" aria-label="Play Bubble Shooter on its website">
-          <div class="game-art art-bubble"><span class="game-logo-label">PUZZLE PICK</span><span class="game-logo bubble-logo">BUBBLE<br><b>SHOOTER</b></span><div class="bubble-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-          <div class="game-card-copy"><span class="game-category">PUZZLE · ARCADE</span><span class="game-card-title">Bubble Shooter</span><span class="game-card-meta">Match the bubbles and clear the sky.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        <a class="game-card" href="bubble-burst/" data-name="Bubble Burst Shooter" data-categories="puzzle arcade">
+          <div class="game-art art-bubble"><span class="game-logo-label">SRIJAN ORIGINAL</span><span class="game-logo bubble-logo">BUBBLE<br><b>BURST</b></span><div class="bubble-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="game-card-copy"><span class="game-category">PUZZLE · AIM</span><span class="game-card-title">Bubble Burst</span><span class="game-card-meta">Aim, match colors, and pop every cluster.</span><span class="play-link">Take aim <span aria-hidden="true">↗</span></span></div>
         </a>
       </div>
       <p id="emptyState" class="empty-state" hidden>No games match that search. Try another title or category.</p>
     </section>
 
-    <section class="about-section" id="about" aria-labelledby="about-title"><div class="about-mark" aria-hidden="true">✳</div><div><p class="eyebrow small-eyebrow">A LITTLE ARCADE, MADE WITH CARE</p><h2 id="about-title">Games for the in-between moments.</h2><p>Srijan’s Arcade brings together original browser games and hand-picked favorites. Star Patrol and Prism Path are made for this site; other game cards take you to their own websites.</p></div></section>
+    <section class="about-section" id="about" aria-labelledby="about-title"><div class="about-mark" aria-hidden="true">✳</div><div><p class="eyebrow small-eyebrow">A LITTLE ARCADE, MADE WITH CARE</p><h2 id="about-title">Your games. Your galaxy.</h2><p>Every game in this arcade is an original Srijan’s Arcade creation, with its own look, rules, and high-score chase. Pick one and play right here.</p></div></section>
   </main>
-  <footer class="site-footer"><a class="footer-brand" href="index.html">SRIJAN’S ARCADE</a><span>Play a little. Come back smiling.</span><a href="privacy.html">Privacy</a></footer>
+  <footer class="site-footer"><a class="footer-brand" href="index.html">SRIJAN’S ARCADE</a><span>Made with imagination. Played with joy.</span><a href="privacy.html">Privacy</a></footer>
 </body>
 </html>

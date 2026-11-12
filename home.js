@@ -6,6 +6,8 @@
   const count = document.querySelector('#resultCount');
   const empty = document.querySelector('#emptyState');
   let active = 'all';
+  const allCount = document.querySelector('[data-filter=all] span');
+  if (allCount) allCount.textContent = String(cards.length);
   function update() {
     const query = search.value.trim().toLowerCase();
     let visible = 0;
