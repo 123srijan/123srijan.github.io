@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#142b24"><title>Cricket Cup — Srijan’s Arcade</title><link rel="stylesheet" href="../arcade-game.css"><script src="cricket.js" defer></script></head>
+<body class="cricket-theme"><main class="arcade-shell">
+<header class="arcade-top"><a class="arcade-brand" href="../index.html"><span class="arcade-brand-mark">✳</span>SRIJAN’S ARCADE</a><a class="back-link" href="../index.html">← All games</a></header>
+<section class="game-intro"><p class="game-eyebrow">SRIJAN ORIGINAL · BAT FIRST</p><h1>Cricket Cup</h1><p>One over. Three wickets. Can your timing carry the innings to the target?</p></section>
+<div class="game-layout"><section class="game-card-panel" aria-label="Cricket Cup game">
+<div class="score-row"><div class="stat"><span>Runs</span><strong id="runs">0</strong></div><div class="stat"><span>Wickets</span><strong id="wickets">0 / 3</strong></div><div class="stat"><span>Overs</span><strong id="overs">0.0 / 1</strong></div><div class="stat"><span>Target</span><strong id="target">24</strong></div><div class="game-status" id="cricketStatus" aria-live="polite">READY</div></div>
+<div class="canvas-stage"><canvas id="cricketCanvas" width="640" height="480" aria-label="Cricket game. Tap Swing when the ball reaches the batter."></canvas><div class="game-overlay" id="cricketOverlay"><div class="overlay-box"><span class="overlay-icon">🏏</span><h2 id="cricketOverlayTitle">Take the crease</h2><p id="cricketOverlayCopy">Watch the ball, time your swing, and chase 24 runs in one over.</p><button id="cricketStart" class="game-button primary">START INNINGS</button></div></div></div>
+<div class="game-actions"><button id="swingButton" class="game-button primary" type="button">SWING · SPACE</button><button id="cricketAgain" class="game-button" type="button">NEW OVER</button><span class="action-note">Tap Swing or press Space as the ball reaches the crease. A perfect hit finds the boundary.</span></div>
+</section><aside class="info-panel"><h2>Read the ball</h2><p>Deliveries vary in speed and swing. Hit early or late and you may only sneak a single. Find the sweet spot for a boundary.</p><p class="tip">Controls: tap the pitch, tap the swing button, or press Space. The game works on phones and computers.</p></aside></div>
+<footer class="page-footer"><span>SRIJAN’S ARCADE · CRICKET CUP</span><a href="../privacy.html">PRIVACY</a></footer>
+</main></body></html>
