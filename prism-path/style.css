@@ -111,7 +111,7 @@ h1 { margin: 0; color: #34294a; font-size: clamp(24px, 7vw, 30px); font-weight: 
 .levels-heading h2 { margin: 0 0 3px; color: #40334f; font-size: 12px; font-weight: 850; }
 .levels-heading p { margin: 0; color: #a097a8; font-size: 8px; }
 .levels-count { padding: 4px 7px; border-radius: 8px; color: #897c96; background: #f5f1f7; font-size: 8px; font-weight: 800; }
-.level-list { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; }
+.level-list { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; max-height: 280px; overflow: auto; overscroll-behavior: contain; padding: 3px; }
 .level-button { display: grid; place-items: center; min-width: 0; aspect-ratio: 1; padding: 0; border: 1px solid #ebe5ef; border-radius: 10px; color: #84748f; background: #faf8fb; font-size: 9px; font-weight: 850; cursor: pointer; transition: .15s ease; }
 .level-button.active { border-color: #9871c1; color: white; background: #8c65b7; box-shadow: 0 3px 8px #8456ae30; }
 .level-button.complete { border-color: #c6e9df; color: #288a75; background: #f0fbf7; }

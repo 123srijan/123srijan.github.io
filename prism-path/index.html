@@ -12,7 +12,7 @@
   <body>
     <main class="phone-app">
       <header class="app-header">
-        <a class="brand" href="#top" aria-label="Prism Path home">
+        <a class="brand" href="../index.html" aria-label="Prism Path home">
           <span class="brand-mark" aria-hidden="true">✦</span>
           <span>Prism Path</span>
         </a>
@@ -45,11 +45,11 @@
         </div>
         <div class="stat-card">
           <span>PROGRESS</span>
-          <strong id="progressLabel">0 / 8</strong>
+          <strong id="progressLabel">0 / 60</strong>
         </div>
       </section>
 
-      <div class="progress-track" role="progressbar" aria-label="Levels completed" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0">
+      <div class="progress-track" role="progressbar" aria-label="Levels completed" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0">
         <span id="progressBar"></span>
       </div>
 
@@ -99,9 +99,10 @@
         <div class="level-list" id="levelList"></div>
       </section>
 
-      <footer class="app-footer">Take it one turn at a time <span aria-hidden="true">✦</span></footer>
+      <footer class="app-footer">Take it one turn at a time <span aria-hidden="true">✦</span> <a href="../privacy.html">Privacy</a></footer>
     </main>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="levels.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
