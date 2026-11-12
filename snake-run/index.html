@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#09131d"><title>Snake Run — Srijan’s Arcade</title><link rel="stylesheet" href="../arcade-game.css"><script src="snake.js" defer></script></head>
+<body class="snake-theme"><main class="arcade-shell">
+<header class="arcade-top"><a class="arcade-brand" href="../index.html"><span class="arcade-brand-mark">✳</span>SRIJAN’S ARCADE</a><a class="back-link" href="../index.html">← All games</a></header>
+<section class="game-intro"><p class="game-eyebrow">SRIJAN ORIGINAL · CLASSIC ARCADE</p><h1>Snake Run</h1><p>Collect glowing fruit, grow your tail, and see how long you can stay in the garden.</p></section>
+<div class="game-layout"><section class="game-card-panel" aria-label="Snake Run game">
+<div class="score-row"><div class="stat"><span>Score</span><strong id="snakeScore">0</strong></div><div class="stat"><span>Best</span><strong id="snakeBest">0</strong></div><div class="stat"><span>Length</span><strong id="snakeLength">3</strong></div><div class="game-status" id="snakeStatus" aria-live="polite">READY</div></div>
+<div class="canvas-stage"><canvas id="snakeCanvas" width="520" height="520" aria-label="Snake Run game board"></canvas><div class="game-overlay" id="snakeOverlay"><div class="overlay-box"><span class="overlay-icon">🐍</span><h2 id="snakeOverlayTitle">Ready to slither?</h2><p id="snakeOverlayCopy">Use arrow keys or WASD. On a phone, use the arrow pad below.</p><button id="snakeStart" class="game-button primary">START RUN</button></div></div></div>
+<div class="game-actions"><button id="snakePause" class="game-button" type="button">PAUSE</button><button id="snakeAgain" class="game-button primary" type="button">NEW RUN</button><span class="action-note">Arrow keys / WASD · avoid walls and your own tail</span></div>
+<div class="mobile-pad" aria-label="Snake direction controls"><span></span><button data-dir="up" aria-label="Move up">↑</button><span></span><button data-dir="left" aria-label="Move left">←</button><button data-dir="down" aria-label="Move down">↓</button><button data-dir="right" aria-label="Move right">→</button></div>
+</section><aside class="info-panel"><h2>Garden rules</h2><p>Eat the golden fruit to add a tail segment. Every fruit makes the snake a little quicker. The run ends if you hit the wall or your own trail.</p><p class="tip">Your best score stays saved on this device. Pause any time if the garden gets too wild.</p></aside></div>
+<footer class="page-footer"><span>SRIJAN’S ARCADE · SNAKE RUN</span><a href="../privacy.html">PRIVACY</a></footer>
+</main></body></html>
