@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b17">
+  <title>Srijan’s Star Patrol — A space battle game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="p.css">
+  <script src="p.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Starfall home"><span class="brand-mark">✳</span> STARFALL</a>
+      <div class="top-note"><span class="live-dot"></span> PERSONAL SPACE DEFENSE</div>
+      <button class="sound-button" id="soundToggle" type="button" aria-pressed="false" aria-label="Toggle sound"><span aria-hidden="true">♫</span><span class="sound-label">SOUND OFF</span></button>
+    </header>
+    <section class="intro" aria-labelledby="pageTitle">
+      <p class="eyebrow">✦ &nbsp; PILOT SRIJAN’S STAR PATROL</p>
+      <h1 id="pageTitle">Defend your<br><span>little corner.</span></h1>
+      <p class="lede">Hostile ships are closing in. Pilot your fighter, break through enemy waves, and protect the stars.</p>
+    </section>
+    <section class="game-layout" aria-label="Starfall game">
+      <div class="game-frame">
+        <div class="game-hud">
+          <div class="hud-item"><span class="hud-label">SCORE</span><strong id="score">0000</strong></div>
+          <div class="hud-center"><span class="orbit-icon">◌</span><span id="statusText">READY FOR TAKEOFF</span></div>
+          <div class="hud-item hud-wave"><span class="hud-label">WAVE</span><strong id="wave">01</strong></div>
+          <div class="hud-item hud-best"><span class="hud-label">BEST</span><strong id="best">0000</strong></div>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="game" aria-label="Space battle game. Steer with arrow keys or A and D, and hold Space to fire at enemy ships."></canvas>
+          <div class="overlay" id="overlay">
+            <div class="overlay-card">
+              <div class="overlay-star">✳</div>
+              <p class="overlay-kicker" id="overlayKicker">PILOT SRIJAN, YOUR SHIP IS READY</p>
+              <h2 id="overlayTitle">Ready for launch?</h2>
+              <p id="overlayCopy">Steer with ← → or A / D. Hold SPACE to fire.<br>Clear waves and collect star shards.</p>
+              <button class="play-button" id="playButton" type="button"><span id="playLabel">START MISSION</span><span aria-hidden="true">↗</span></button>
+            </div>
+          </div>
+          <div class="toast" id="toast" aria-live="polite"></div>
+        </div>
+        <div class="game-footer">
+          <div class="control-hint"><span class="keycap">←</span><span class="keycap">→</span><span>or</span><span class="keycap">A</span><span class="keycap">D</span><span class="hint-label">steer</span><span class="keycap">SPACE</span><span class="hint-label">fire</span></div>
+          <div class="mobile-hint"><span>DRAG TO STEER · TAP TO FIRE</span></div>
+          <button class="pause-button" id="pauseButton" type="button" disabled><span>Ⅱ</span> PAUSE</button>
+        </div>
+      </div>
+      <aside class="side-panel">
+        <div class="mission-card">
+          <div class="card-top"><span class="card-icon">✦</span><span class="card-tag">THE MISSION</span></div>
+          <h2>Hold the<br>front line.</h2>
+          <p>Blast hostile fighters, dodge incoming fire, and survive each wave. Boss ships arrive every third wave.</p>
+          <div class="mission-rule"></div>
+          <div class="objective"><span class="objective-dot star-dot">✦</span><span>Star shard</span><b>+50</b></div>
+          <div class="objective"><span class="objective-dot rock-dot">◈</span><span>Clear a fighter</span><b>+90</b></div>
+        </div>
+        <div class="quote-card"><span class="quote-mark">“</span><p>One pilot. One tiny ship. A whole galaxy to protect.</p><span class="quote-credit">A NOTE FROM THE UNIVERSE</span></div>
+      </aside>
+    </section>
+    <footer class="page-footer"><span>SRIJAN’S PERSONAL SPACE PATROL</span><span class="footer-star">✳</span><span>STAY SHARP OUT THERE.</span></footer>
+  </main>
+</body>
+</html>
