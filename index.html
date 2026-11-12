@@ -3,93 +3,79 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Play Stack Panic, a cheerful tower-stacking arcade game. Slide, trim, and stack blocks in Classic or Daily Challenge mode.">
-  <meta name="theme-color" content="#111328">
-  <title>Stack Panic! — Tower Stacking Arcade</title>
+  <meta name="theme-color" content="#c9f4d8">
+  <meta name="description" content="Find your next quick game at Srijan’s Arcade. Play Star Patrol and Prism Path, or discover favorite puzzle, sports, and arcade games.">
+  <title>Srijan’s Arcade — Pick a game and play</title>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3642224896936056" crossorigin="anonymous"></script>
-  <style>
-    :root { color-scheme: dark; font-family: Arial, sans-serif; background: #111328; color: #f8f7ff; }
-    * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 50% 0%, #30216b 0, #171834 42rem, #101225 100%); }
-    a { color: inherit; }
-    .wrap { width: min(1040px, calc(100% - 2rem)); margin: auto; }
-    header { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #ffffff20; }
-    .brand { color: #ffd43b; font-weight: 900; font-size: 1.2rem; letter-spacing: .05em; text-decoration: none; }
-    .brand span { color: #ff6689; }
-    nav { display: flex; gap: 1.2rem; font-size: .95rem; }
-    nav a { color: #c9c6e8; text-decoration: none; }
-    nav a:hover { color: #fff; }
-    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center; padding: 5.5rem 0 4rem; }
-    .eyebrow { color: #87ed50; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .78rem; }
-    h1 { margin: .7rem 0 1rem; font-size: clamp(2.8rem, 8vw, 5.8rem); line-height: .98; letter-spacing: -.04em; }
-    h1 span { color: #ffbd26; }
-    .intro { max-width: 570px; color: #cbc9e0; font-size: 1.15rem; line-height: 1.7; }
-    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem; margin-top: 1.8rem; }
-    .play { display: inline-block; padding: .95rem 1.4rem; border-radius: 999px; background: linear-gradient(100deg, #ffb617, #ff6530); color: #1d1531; font-weight: 800; text-decoration: none; box-shadow: 0 8px 24px #ff6a3340; }
-    .secondary { color: #d7d3f2; }
-    .tower-card { border: 1px solid #8375e555; border-radius: 1.5rem; padding: 1.5rem; background: #201c45d9; box-shadow: 0 22px 70px #07081780; }
-    .tower-card h2 { margin: 0 0 .7rem; color: #fff; }
-    .tower-card p { color: #c4c0e2; line-height: 1.6; }
-    .blocks { display: grid; gap: .5rem; max-width: 230px; margin: 1.5rem auto .4rem; transform: skewY(-7deg); }
-    .blocks i { height: 1.4rem; border-radius: .4rem; background: linear-gradient(90deg, #93f33d, #45cb68); box-shadow: inset 0 -4px #20a84e; }
-    .blocks i:nth-child(1) { width: 64%; margin-left: 32%; background: linear-gradient(90deg,#ffbd27,#ff7f24); }
-    .blocks i:nth-child(2) { width: 76%; margin-left: 18%; }
-    .blocks i:nth-child(3) { width: 90%; margin-left: 7%; }
-    .blocks i:nth-child(4) { width: 100%; }
-    .section { padding: 1rem 0 4rem; }
-    .section h2 { font-size: 2rem; margin-bottom: .5rem; }
-    .section-intro { color: #c4c0e2; line-height: 1.6; }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
-    .tile { padding: 1.2rem; border-radius: 1rem; border: 1px solid #ffffff1c; background: #191b38; }
-    .tile h3 { margin-top: 0; color: #ffd43b; }
-    .tile p { margin-bottom: 0; color: #c4c0e2; line-height: 1.6; }
-    .howto { color: #d1cee8; line-height: 1.9; padding-left: 1.3rem; }
-    footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding: 1.4rem 0 2rem; border-top: 1px solid #ffffff20; color: #bcb9d6; font-size: .9rem; }
-    footer a { color: #d7d3f2; }
-    @media (max-width: 700px) { .hero { grid-template-columns: 1fr; padding: 3.5rem 0 2.5rem; } .tower-card { max-width: 480px; } .grid { grid-template-columns: 1fr; } }
-  </style>
+  <link rel="stylesheet" href="home.css">
+  <script src="home.js" defer></script>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <a class="brand" href="/">STACK <span>PANIC!</span></a>
-      <nav aria-label="Main navigation"><a href="/stack-panic/">Stack Panic</a><a href="/prism-path/">Prism Path</a><a href="/stack-panic/privacy.html">Privacy</a></nav>
-    </header>
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div>
-          <p class="eyebrow">A cheerful tower-stacking arcade game</p>
-          <h1 id="hero-title">Stack high.<br><span>Stay balanced.</span></h1>
-          <p class="intro">Slide each block into place, trim the overhang, and build a tower that reaches the skyline. Play a quick Classic round or take on the shared Daily Challenge.</p>
-          <div class="actions"><a class="play" href="/stack-panic/">Play Stack Panic</a><a class="secondary" href="#how-to-play">How to play</a></div>
-        </div>
-        <aside class="tower-card" aria-label="Stack Panic game overview">
-          <h2>Ready to stack?</h2>
-          <p>Pick a difficulty, watch the moving block, then tap or press Space to drop it. Perfect landings build streaks.</p>
-          <div class="blocks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        </aside>
-      </section>
-      <section class="section" aria-labelledby="modes-title">
-        <h2 id="modes-title">Three ways to play</h2>
-        <p class="section-intro">Choose the pace that fits your next round.</p>
-        <div class="grid">
-          <article class="tile"><h3>Classic</h3><p>Stack as high as you can and beat your personal best.</p></article>
-          <article class="tile"><h3>Daily Challenge</h3><p>Play the same seeded block sequence as everyone else today.</p></article>
-          <article class="tile"><h3>Easy, Medium, Hard</h3><p>Start with wider, slower blocks or test your precision at full speed.</p></article>
-        </div>
-      </section>
-      <section class="section" id="how-to-play" aria-labelledby="how-title">
-        <h2 id="how-title">How to play</h2>
-        <ol class="howto">
-          <li>Choose a difficulty and Classic or Daily mode.</li>
-          <li>Tap the screen, click, or press Space to drop a moving block.</li>
-          <li>Line it up carefully: overhanging parts are trimmed away.</li>
-          <li>Build perfect streaks to score higher and recover block width.</li>
-        </ol>
-        <a class="play" href="/stack-panic/">Start a round</a>
-      </section>
-    </main>
-    <footer><span>Stack Panic — a browser arcade game.</span><span><a href="/stack-panic/privacy.html">Privacy</a> · <a href="/stack-panic/">Play the game</a></span></footer>
-  </div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Srijan’s Arcade home"><span class="brand-symbol" aria-hidden="true">✳</span><span>SRIJAN<span class="brand-accent">’S ARCADE</span></span></a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="#games">Games</a><a href="#about">About</a><a href="privacy.html">Privacy</a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow"><span class="sparkle" aria-hidden="true">✦</span> YOUR NEXT BREAK STARTS HERE</p>
+      <h1 id="hero-title">Pick a game.<br><span>Make it a good one.</span></h1>
+      <p class="hero-copy">Quick puzzles, playful sports, and a space battle made by Srijan. Choose a card and jump right in.</p>
+      <form class="search-form" role="search" onsubmit="return false">
+        <label class="visually-hidden" for="gameSearch">Search games</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="gameSearch" type="search" autocomplete="off" placeholder="What do you want to play?">
+        <button id="clearSearch" class="clear-search" type="button" aria-label="Clear search" hidden>×</button>
+      </form>
+      <div class="category-list" role="group" aria-label="Filter games by category">
+        <button class="category-chip active" type="button" data-filter="all" aria-pressed="true">All games <span>8</span></button>
+        <button class="category-chip" type="button" data-filter="action" aria-pressed="false">Action</button>
+        <button class="category-chip" type="button" data-filter="puzzle" aria-pressed="false">Puzzle</button>
+        <button class="category-chip" type="button" data-filter="sports" aria-pressed="false">Sports</button>
+        <button class="category-chip" type="button" data-filter="arcade" aria-pressed="false">Arcade</button>
+      </div>
+    </section>
+
+    <section class="library" id="games" aria-labelledby="games-title">
+      <div class="library-heading"><div><p class="eyebrow small-eyebrow">THE GAME SHELF</p><h2 id="games-title">Choose your next game</h2></div><span id="resultCount" class="result-count" aria-live="polite">8 games</span></div>
+      <div class="game-grid" id="gameGrid">
+        <a class="game-card" href="star-patrol/" data-name="Srijan’s Star Patrol" data-categories="action arcade" aria-label="Play Srijan’s Star Patrol">
+          <div class="game-art art-star"><span class="game-logo-label">SRIJAN’S ORIGINAL</span><span class="game-logo star-logo">✦ STAR<br><b>PATROL</b></span><svg class="ship-art" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 10 65 62 50 54 35 62Z"/><path d="m39 58-20 18 26-8M61 58l20 18-26-8"/><circle cx="50" cy="43" r="5"/></svg><span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span></div>
+          <div class="game-card-copy"><span class="game-category">ACTION · ARCADE</span><span class="game-card-title">Star Patrol</span><span class="game-card-meta">Defend the galaxy from enemy waves.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        </a>
+        <a class="game-card" href="prism-path/" data-name="Prism Path" data-categories="puzzle" aria-label="Play Prism Path">
+          <div class="game-art art-prism"><span class="game-logo-label">SRIJAN’S ORIGINAL</span><span class="game-logo prism-logo">PRISM<br><b>PATH</b></span><svg class="prism-art" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 13 78 50 50 87 22 50Z"/><path d="M50 13v74M22 50h56"/><path class="beam-art" d="M10 50h23l17-26 17 26h23"/></svg></div>
+          <div class="game-card-copy"><span class="game-category">PUZZLE</span><span class="game-card-title">Prism Path</span><span class="game-card-meta">Turn mirrors and guide the light.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        </a>
+        <a class="game-card" href="https://123srijan.github.io/stack-panic/" data-name="Stack Panic" data-categories="puzzle arcade" aria-label="Play Stack Panic">
+          <div class="game-art art-stack"><span class="game-logo-label">ARCADE FAVORITE</span><span class="game-logo stack-logo">STACK<br><b>PANIC!</b></span><div class="stack-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+          <div class="game-card-copy"><span class="game-category">PUZZLE · ARCADE</span><span class="game-card-title">Stack Panic!</span><span class="game-card-meta">Line up the blocks. Build a tower.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        </a>
+        <a class="game-card" href="https://blockblast-2.io/" target="_blank" rel="noopener noreferrer" data-name="Block Blast 2" data-categories="puzzle arcade" aria-label="Play Block Blast 2 on its website">
+          <div class="game-art art-block"><span class="game-logo-label">PUZZLE PICK</span><span class="game-logo block-logo">BLOCK<br><b>BLAST 2</b></span><div class="block-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="game-card-copy"><span class="game-category">PUZZLE · ARCADE</span><span class="game-card-title">Block Blast 2</span><span class="game-card-meta">Fit the shapes and clear the board.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        </a>
+        <a class="game-card" href="https://doodlecricket.github.io/" target="_blank" rel="noopener noreferrer" data-name="Doodle Cricket" data-categories="sports" aria-label="Play Doodle Cricket on its website">
+          <div class="game-art art-cricket"><span class="game-logo-label">SPORTS</span><span class="game-logo cricket-logo">DOODLE<br><b>CRICKET</b></span><svg class="cricket-art" viewBox="0 0 120 100" aria-hidden="true"><path d="M38 82 83 20l10 7-45 62Z"/><circle cx="84" cy="72" r="11"/><path d="M20 73h23M20 80h23M20 87h23"/></svg></div>
+          <div class="game-card-copy"><span class="game-category">SPORTS</span><span class="game-card-title">Doodle Cricket</span><span class="game-card-meta">Swing for the boundary.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        </a>
+        <a class="game-card" href="https://doodlecricket.github.io/doodle-baseball" target="_blank" rel="noopener noreferrer" data-name="Doodle Baseball" data-categories="sports" aria-label="Play Doodle Baseball on its website">
+          <div class="game-art art-baseball"><span class="game-logo-label">SPORTS</span><span class="game-logo baseball-logo">DOODLE<br><b>BASEBALL</b></span><svg class="baseball-art" viewBox="0 0 120 100" aria-hidden="true"><path d="M31 82 82 20l11 9-52 62Z"/><circle cx="85" cy="72" r="12"/><path d="M80 64c7 6 9 11 8 17M91 67c-7 6-10 11-10 17"/></svg></div>
+          <div class="game-card-copy"><span class="game-category">SPORTS</span><span class="game-card-title">Doodle Baseball</span><span class="game-card-meta">Step up to the plate and swing.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        </a>
+        <a class="game-card" href="https://doodlecricket.github.io/doodle-snake" target="_blank" rel="noopener noreferrer" data-name="Doodle Snake" data-categories="arcade" aria-label="Play Doodle Snake on its website">
+          <div class="game-art art-snake"><span class="game-logo-label">ARCADE</span><span class="game-logo snake-logo">DOODLE<br><b>SNAKE</b></span><svg class="snake-art" viewBox="0 0 130 90" aria-hidden="true"><path d="M18 68h29V49h27V30h31"/><circle cx="108" cy="30" r="12"/><circle class="snake-eye" cx="112" cy="27" r="2"/><circle class="snake-eye" cx="112" cy="33" r="2"/></svg></div>
+          <div class="game-card-copy"><span class="game-category">ARCADE</span><span class="game-card-title">Doodle Snake</span><span class="game-card-meta">Grow your snake. Dodge your tail.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        </a>
+        <a class="game-card" href="https://www.bubbleshooter.com/" target="_blank" rel="noopener noreferrer" data-name="Bubble Shooter" data-categories="puzzle arcade" aria-label="Play Bubble Shooter on its website">
+          <div class="game-art art-bubble"><span class="game-logo-label">PUZZLE PICK</span><span class="game-logo bubble-logo">BUBBLE<br><b>SHOOTER</b></span><div class="bubble-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="game-card-copy"><span class="game-category">PUZZLE · ARCADE</span><span class="game-card-title">Bubble Shooter</span><span class="game-card-meta">Match the bubbles and clear the sky.</span><span class="play-link">Play game <span aria-hidden="true">↗</span></span></div>
+        </a>
+      </div>
+      <p id="emptyState" class="empty-state" hidden>No games match that search. Try another title or category.</p>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title"><div class="about-mark" aria-hidden="true">✳</div><div><p class="eyebrow small-eyebrow">A LITTLE ARCADE, MADE WITH CARE</p><h2 id="about-title">Games for the in-between moments.</h2><p>Srijan’s Arcade brings together original browser games and hand-picked favorites. Star Patrol and Prism Path are made for this site; other game cards take you to their own websites.</p></div></section>
+  </main>
+  <footer class="site-footer"><a class="footer-brand" href="index.html">SRIJAN’S ARCADE</a><span>Play a little. Come back smiling.</span><a href="privacy.html">Privacy</a></footer>
 </body>
 </html>
