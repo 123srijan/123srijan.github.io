@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#251625"><title>Tower Builder — Srijan’s Arcade</title><link rel="stylesheet" href="../arcade-game.css"><script src="stack.js" defer></script></head>
+<body class="stack-theme"><main class="arcade-shell">
+<header class="arcade-top"><a class="arcade-brand" href="../index.html"><span class="arcade-brand-mark">✳</span>SRIJAN’S ARCADE</a><a class="back-link" href="../index.html">← All games</a></header>
+<section class="game-intro"><p class="game-eyebrow">SRIJAN ORIGINAL · STACKING SKILL</p><h1>Tower Builder</h1><p>Stop each moving platform at the right moment. One shaky drop can end the climb.</p></section>
+<div class="game-layout"><section class="game-card-panel" aria-label="Stack Panic game">
+<div class="score-row"><div class="stat"><span>Score</span><strong id="stackScore">0</strong></div><div class="stat"><span>Best</span><strong id="stackBest">0</strong></div><div class="stat"><span>Level</span><strong id="stackLevel">1</strong></div><div class="game-status" id="stackStatus" aria-live="polite">READY</div></div>
+<div class="canvas-stage"><canvas id="stackCanvas" width="720" height="450" aria-label="Stacking game. Tap or press Space to drop a moving platform."></canvas><div class="game-overlay" id="stackOverlay"><div class="overlay-box"><span class="overlay-icon">▰</span><h2 id="stackOverlayTitle">Build above the clouds</h2><p id="stackOverlayCopy">Tap or press Space to drop each moving block. Keep the overlap to stay in the game.</p><button id="stackStart" class="game-button primary">START BUILDING</button></div></div></div>
+<div class="game-actions"><button id="stackDrop" class="game-button primary" type="button">DROP BLOCK · SPACE</button><button id="stackAgain" class="game-button" type="button">NEW TOWER</button><span class="action-note">Tap the playfield or press Space · smaller landings mean a narrower tower</span></div>
+</section><aside class="info-panel"><h2>Keep it centered</h2><p>Blocks slide across the sky. Drop one over the tower; any part that misses is trimmed off, making the next landing trickier.</p><p class="tip">Every 12 clean layers takes you to a new level, with faster platforms and a different sky.</p></aside></div>
+<footer class="page-footer"><span>SRIJAN’S ARCADE · TOWER BUILDER</span><a href="../privacy.html">PRIVACY</a></footer>
+</main></body></html>
+
