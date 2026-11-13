@@ -33,6 +33,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.24;ba
 .game-button:hover{transform:translateY(-2px);border-color:#8ef0c888;background:#27485a}
 .game-button.primary{background:var(--mint);border-color:var(--mint);color:#082018;box-shadow:0 5px 18px #8ef0c833}
 .game-button.primary:hover{background:#b5ffe1}
+.touch-controls{padding:0 12px 14px;text-align:center}.mini-controls{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}.mini-controls .game-button{min-width:56px;min-height:44px;touch-action:manipulation;box-shadow:0 5px 16px #0003}.mini-controls .game-button:active{transform:translateY(2px) scale(.97)}
 .action-note{flex:1 0 100%;text-align:center;color:#91a7b6;font-size:10px}
 .info-panel{padding:20px;animation:arrive .8s .12s both}
 .info-panel h2{font-size:18px;margin:2px 0 10px}
@@ -69,3 +70,4 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.24;ba
 .canvas-stage:has(#snakeCanvas){width:min(100%,520px);aspect-ratio:1;margin:0 auto;min-height:0}
 .canvas-stage:has(#bubbleCanvas){width:min(100%,520px);aspect-ratio:13/14.5;margin:0 auto;min-height:0}
 .canvas-stage:has(#stackCanvas){aspect-ratio:16/10;min-height:0}
+.canvas-stage:has(#playCanvas){aspect-ratio:4/3;min-height:0}
