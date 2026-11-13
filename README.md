@@ -1,4 +1,4 @@
-# Srijan’s Arcade
+# GameBox Arcade
 
 An original browser arcade hosted on GitHub Pages. Every game card opens a game on this site; there are no outbound game redirects.
 
@@ -10,7 +10,6 @@ An original browser arcade hosted on GitHub Pages. Every game card opens a game 
 - bubble-burst/: 60 progressive boards, with endless play after level 60
 - block-workshop/: 60 progressively harder shape-placement levels plus endless play
 - tower-builder/: precision tower-building arcade game
-- dragon-jump/: original tap-to-jump dragon runner
 - chicken-crossing/: original lane-dodging road hopper
 - skyline-runner/: original three-lane endless runner
 - fruit-swipe/: original fruit slicing arcade game

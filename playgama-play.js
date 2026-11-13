@@ -34,7 +34,7 @@
       frame.src = gameUrl.href;
       wrap.hidden = false;
       message.hidden = true;
-      document.title = `${game.title} — Srijan’s Arcade`;
+      document.title = `${game.title} — GameBox Arcade`;
     })
     .catch(error => {
       console.error('Partner game could not load:', error);

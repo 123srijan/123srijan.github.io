@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://123srijan.github.io/sitemap.xml

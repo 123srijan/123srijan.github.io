@@ -9,6 +9,16 @@
   const allCount = document.querySelector('[data-filter=all] span');
   function collectCards() {
     cards = [...document.querySelectorAll('.game-card')];
+    for (const card of cards) {
+      const title = card.dataset.title || card.querySelector('.game-card-title')?.textContent.trim() || card.dataset.name.split(/\s+/).slice(0, 5).join(' ');
+      card.setAttribute('aria-label', `Play ${title}`);
+      const copy = card.querySelector('.game-card-copy');
+      const play = copy?.querySelector('.play-link');
+      if (copy && play) {
+        play.textContent = 'PLAY';
+        copy.replaceChildren(play);
+      }
+    }
     if (allCount) allCount.textContent = String(cards.length);
     update();
   }
@@ -16,7 +26,7 @@
     const query = search.value.trim().toLowerCase();
     let visible = 0;
     for (const card of cards) {
-      const matchesText = `${card.dataset.name} ${card.querySelector('.game-card-meta').textContent} ${card.dataset.categories}`.toLowerCase().includes(query);
+      const matchesText = `${card.dataset.name} ${card.dataset.categories}`.toLowerCase().includes(query);
       const matchesCategory = active === 'all' || card.dataset.categories.split(' ').includes(active);
       const show = matchesText && matchesCategory;
       card.hidden = !show;
@@ -38,5 +48,5 @@
   search.addEventListener('input', update);
   clear.addEventListener('click', () => { search.value = ''; search.focus(); update(); });
   document.addEventListener('arcade:catalog-updated', collectCards);
-  update();
+  collectCards();
 })();

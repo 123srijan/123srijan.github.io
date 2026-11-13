@@ -72,6 +72,23 @@ body::before{content:"";position:fixed;z-index:-1;inset:0;pointer-events:none;ba
 .hero-orbit b{width:8px;height:8px;top:135px;left:140px;background:#9f8aff;box-shadow:0 0 16px #9f8aff}
 @media(max-width:760px){.hero-orbit{right:0;top:30px;width:130px;height:130px;opacity:.3}.hero-orbit::before{inset:13px}.hero-orbit::after{inset:31px}.hero-orbit i{top:21px;left:22px}.hero-orbit b{top:100px;left:104px}}
 
+/* Cheerful toy-box style and logo-first game cards */
+:root{--ink:#28335a;--muted:#65708a;--mint:#ffe8a2;--mint-deep:#ffb15e;--paper:#fffaf0;--line:#f0dcae;--coral:#ff7868;--yellow:#ffe26e;--violet:#9b79ee;--shadow:0 12px 26px #61452a20}
+body{background:radial-gradient(ellipse at 12% 4%,#fff4c9 0 10%,transparent 34%),linear-gradient(180deg,#ffe59a 0,#fff3cc 430px,#fff9eb 950px);}
+.site-header{max-width:1320px}.brand{font-size:15px}.brand-symbol{border-radius:13px;background:#6554c0;box-shadow:0 4px 0 #423680;color:#ffe26e;animation:mascotHop 2.5s ease-in-out infinite}.brand-accent{color:#f27662}
+.site-nav a{color:#574b7c}.site-nav a:hover{color:#ee655f}
+.hero{position:relative;isolation:isolate;max-width:1000px;padding:61px 24px 37px}.eyebrow{color:#755baa}.hero h1{color:#343064;text-shadow:0 3px 0 #fff8da}.hero h1 span{color:#ed6e63}.hero-copy{color:#665d77;font-size:16px}
+.search-form{border:2px solid #fff;background:#fffefa;border-radius:999px;box-shadow:0 6px 0 #ebc779,0 10px 22px #61452a16}.category-chip{border:2px solid #fff;background:#ffffffb8;color:#51456c;box-shadow:0 3px 0 #e5c779}.category-chip.active{background:#6554c0;border-color:#6554c0;box-shadow:0 3px 0 #423680}
+.library{max-width:1360px}.library-heading h2{color:#35305e}.result-count{color:#715c89}
+.game-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}.game-card{border:3px solid #fff;border-radius:23px;background:#fffdf8;box-shadow:0 5px 0 #e6c97f,0 10px 20px #6a4d2920;transition:transform .2s,box-shadow .2s}.game-card:hover{transform:translateY(-7px) rotate(-.6deg);box-shadow:0 8px 0 #dbb75e,0 17px 27px #6a4d2930}.game-art{height:190px;border-radius:17px 17px 13px 13px;margin:4px 4px 0;overflow:hidden}.game-art:after{content:"";position:absolute;inset:8px;border:2px solid #ffffff55;border-radius:13px;pointer-events:none}.game-logo{filter:drop-shadow(0 3px 0 #33245c24);animation:logoWiggle 3.4s ease-in-out infinite}.game-logo-label{z-index:2;padding:5px 8px;border-radius:999px;background:#ffffffba;color:#453c69;opacity:1}
+.game-card-copy{padding:0 12px 12px;min-height:54px;justify-content:center}.play-link{justify-content:center;margin:0;padding:11px 12px;border:0;border-radius:999px;background:#ff806d;color:#fff;font-size:12px;letter-spacing:.12em;box-shadow:0 4px 0 #dc5f57;transition:transform .16s,background .16s}.game-card:hover .play-link{transform:translateY(-2px);background:#f36c61}.play-link span{display:none}.partner-game-art{background:#e8e0ff}.partner-game-art img{border-radius:12px;object-fit:contain;padding:8px}.partner-game-card .game-card-copy{padding-top:0}
+.partner-status{margin:12px 0;background:#fff9e9;border-color:#e8d18d;color:#69552d;border-radius:16px}.empty-state{border-radius:20px;background:#fff9e9}.about-section{border:3px solid #fff;border-radius:26px;background:#fff8df;box-shadow:0 5px 0 #e6c97f}
+.site-footer{border-color:#e9cc7d;color:#665b76}.footer-brand{color:#52458a}
+@media(max-width:1100px){.game-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:760px){.game-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.game-art{height:155px}.library{padding-inline:16px}.site-header{padding-inline:18px}}
+@media(max-width:390px){.game-art{height:132px}.game-logo{font-size:23px}.game-card-copy{min-height:49px;padding-inline:8px;padding-bottom:9px}}
+@media(prefers-reduced-motion:reduce){.brand-symbol,.game-logo,.game-card,.game-card:hover .play-link{animation:none;transition:none}}
+
 /* Approved GamePix catalog and on-page player */
 .partner-library[hidden]{display:none}.partner-intro{margin:-7px 0 20px;color:var(--muted);font-size:13px;line-height:1.55}
 .partner-game-card:focus-visible{outline:3px solid #6651c9;outline-offset:3px}

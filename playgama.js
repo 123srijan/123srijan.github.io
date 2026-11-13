@@ -1,6 +1,5 @@
 (() => {
-  const grid = document.querySelector('#partnerGameGrid');
-  const count = document.querySelector('#partnerResultCount');
+  const grid = document.querySelector('#gameGrid');
   const status = document.querySelector('#partnerStatus');
   if (!grid) return;
 
@@ -27,9 +26,12 @@
   function makeCard(game) {
     const href = gameLink(game);
     if (!href || !game.title || !game.image) return null;
+    if (/chicken road|skyline runner|ludo|happy glass|cricket/i.test(game.title)) return null;
     const card = document.createElement('a');
     card.className = 'game-card partner-game-card';
     card.href = href;
+    card.dataset.title = game.title;
+    card.setAttribute('aria-label', `Play ${game.title}`);
     card.dataset.name = `${game.title} ${game.description || ''} ${(game.genres || []).join(' ')}`;
     card.dataset.categories = categoriesFor(game);
 
@@ -44,20 +46,11 @@
 
     const copy = document.createElement('span');
     copy.className = 'game-card-copy';
-    const category = document.createElement('span');
-    category.className = 'game-category';
-    category.textContent = (game.genres || []).slice(0, 2).join(' · ').toUpperCase() || 'ARCADE';
-    const title = document.createElement('span');
-    title.className = 'game-card-title';
-    title.textContent = game.title;
-    const description = document.createElement('span');
-    description.className = 'game-card-meta';
-    description.textContent = game.description || 'Play this partner game in the arcade player.';
     const play = document.createElement('span');
     play.className = 'play-link';
-    play.textContent = 'Play here  ↗';
-    copy.append(category, title, description, play);
+    play.textContent = 'PLAY';
     card.append(art, copy);
+    copy.append(play);
     return card;
   }
 
@@ -68,21 +61,18 @@
     })
     .then(games => {
       const fragment = document.createDocumentFragment();
-      let total = 0;
       for (const game of games) {
         const card = makeCard(game);
         if (!card) continue;
         fragment.append(card);
-        total++;
       }
-      if (!total) throw new Error('No playable entries were found in the catalog.');
-      grid.replaceChildren(fragment);
-      count.textContent = `${total} partner games`;
+      if (!fragment.childElementCount) throw new Error('No playable entries were found in the catalog.');
+      grid.append(fragment);
       document.dispatchEvent(new CustomEvent('arcade:catalog-updated'));
     })
     .catch(error => {
       console.error('Playgama catalog could not load:', error);
-      status.textContent = 'Partner games could not load right now. Your Srijan’s Arcade games are still available above.';
+      status.textContent = 'More games could not load right now. Your original games are still available.';
       status.hidden = false;
     });
 })();
