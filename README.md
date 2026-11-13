@@ -21,3 +21,7 @@ An original browser arcade hosted on GitHub Pages. Every game card opens a game 
 - privacy.html: disclosures for local game progress and Google services
 - ads.txt: existing AdSense seller declaration
 
+## Playgama partner catalog
+
+`playgama-games.json` contains the selected partner catalog export. `playgama.js` creates searchable game cards, and `playgama-play.html` embeds each selected game on a page on this site. The partner game page does not load AdSense. The games are served by Playgama and its game partners, not hosted by this repository.
+

@@ -1,13 +1,17 @@
 (() => {
   const search = document.querySelector('#gameSearch');
   const clear = document.querySelector('#clearSearch');
-  const cards = [...document.querySelectorAll('.game-card')];
+  let cards = [...document.querySelectorAll('.game-card')];
   const filters = [...document.querySelectorAll('[data-filter]')];
   const count = document.querySelector('#resultCount');
   const empty = document.querySelector('#emptyState');
   let active = 'all';
   const allCount = document.querySelector('[data-filter=all] span');
-  if (allCount) allCount.textContent = String(cards.length);
+  function collectCards() {
+    cards = [...document.querySelectorAll('.game-card')];
+    if (allCount) allCount.textContent = String(cards.length);
+    update();
+  }
   function update() {
     const query = search.value.trim().toLowerCase();
     let visible = 0;
@@ -33,5 +37,6 @@
   }));
   search.addEventListener('input', update);
   clear.addEventListener('click', () => { search.value = ''; search.focus(); update(); });
+  document.addEventListener('arcade:catalog-updated', collectCards);
   update();
 })();
