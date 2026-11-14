@@ -90,6 +90,8 @@ body{background:radial-gradient(ellipse at 12% 4%,#fff4c9 0 10%,transparent 34%)
 @media(prefers-reduced-motion:reduce){.brand-symbol,.game-logo,.game-card,.game-card:hover .play-link{animation:none;transition:none}}
 
 /* A visual-first arcade shelf with personal game filters. */
+:root{--ink:#183b50;--muted:#55727d;--mint:#b8f4e8;--mint-deep:#55d4c2;--paper:#f5fffc;--line:#d6f1e9;--shadow:0 12px 26px #174d4724}
+body{background:radial-gradient(ellipse at 12% 4%,#f4ffff 0 10%,transparent 34%),linear-gradient(180deg,#87ebdd 0,#b7f2e9 480px,#f5fffc 1060px)}
 .collection-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:13px auto 0}
 .collection-chip{border:1px solid #fff;background:#fff9e7;color:#51456c;border-radius:999px;padding:8px 13px;font:inherit;font-size:11px;font-weight:800;cursor:pointer;box-shadow:0 3px 0 #e5c779;transition:transform .16s,background .16s}
 .collection-chip:hover{transform:translateY(-2px)}.collection-chip.active{background:#343064;color:white;border-color:#343064;box-shadow:0 3px 0 #252249}
@@ -106,8 +108,8 @@ body{background:radial-gradient(ellipse at 12% 4%,#fff4c9 0 10%,transparent 34%)
 .game-tile:nth-child(10n + 9){grid-row:span 2}
 .game-tile:nth-child(10n + 1) .game-art{min-height:250px}
 .game-tile:nth-child(10n + 7) .game-art{min-height:170px}
-.game-reactions{position:absolute;z-index:5;top:11px;right:11px;display:flex;gap:5px;padding:4px;border:1px solid #ffffff9c;border-radius:999px;background:#fffdf0e8;box-shadow:0 3px 10px #26223b30;opacity:0;transform:translateY(-4px);transition:opacity .18s,transform .18s}
-.game-tile:hover .game-reactions,.game-tile:focus-within .game-reactions{opacity:1;transform:translateY(0)}
+.game-reactions{position:absolute;z-index:5;top:11px;right:11px;display:flex;gap:5px;padding:4px;border:1px solid #ffffff9c;border-radius:999px;background:#fffdf0e8;box-shadow:0 3px 10px #26223b30;opacity:.94;transition:opacity .18s,transform .18s}
+.game-tile:hover .game-reactions,.game-tile:focus-within .game-reactions{opacity:1;transform:translateY(-2px)}
 .reaction-button{width:29px;height:29px;display:grid;place-items:center;border:0;border-radius:50%;background:transparent;font-size:15px;line-height:1;cursor:pointer;transition:background .15s,transform .15s}
 .reaction-button:hover{background:#efe9ff;transform:scale(1.12)}.reaction-button[aria-pressed=true]{background:#6554c0;color:#fff}
 .reaction-favorite[aria-pressed=true]{background:#ffcf62;color:#4c3b5b}
