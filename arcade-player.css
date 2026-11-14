@@ -71,3 +71,34 @@
 .bottom-recommendations .recommendation-title{font-size:9px}.bottom-recommendations .recommendation-play{font-size:8px}
 @media(max-width:1000px){.side-rail .recommendation-art{height:clamp(88px,12vh,120px)}.bottom-recommendations{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:680px){.side-rail .recommendation-list{grid-template-columns:repeat(3,minmax(0,1fr))}.side-rail .recommendation-art{height:clamp(72px,20vw,120px)}.bottom-recommendations{grid-template-columns:repeat(3,minmax(0,1fr))}.bottom-recommendations .recommendation-art{height:clamp(76px,23vw,110px)}}
+
+/* Bright, image-led desktop game page with game reactions below play. */
+body{background:linear-gradient(135deg,#75e6d8 0%,#a8f0e6 55%,#d4faf1 100%)}
+.player-header{background:#f8ffff;border-bottom:3px solid #55c9bc;color:#143a58}
+.player-header .brand{color:#183d57}.player-header .brand span{background:#ffe071;color:#33436d}
+.player-header h1{color:#143a58}.back-link{color:#20536d}
+.fullscreen-button{background:#ffffff;border-color:#cbece5;color:#1e5269}
+.dashboard{max-width:1760px}
+.side-rail{border:3px solid #fff;border-radius:19px;background:#dffff6aa;box-shadow:0 6px 0 #3dbdaf48,0 14px 26px #215e6540}
+.side-rail .recommendation-card{border:2px solid #fff;border-radius:16px;background:#ffffffd9;box-shadow:0 4px 0 #49bcb34a}
+.side-rail .recommendation-art{border-radius:12px}
+.side-rail .recommendation-play{color:#18465f}
+.game-frame-wrap{border:4px solid #fff;border-radius:16px;background:#fff;box-shadow:0 10px 0 #39b9ae58,0 20px 40px #236c6532}
+.game-actionbar{min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:5px 13px;border:3px solid #fff;border-radius:0 0 15px 15px;background:#fff;box-shadow:0 6px 0 #39b9ae54;color:#174767}
+.game-action-title{min-width:0;display:flex;align-items:center;gap:9px;font-size:15px}
+.game-action-title>span{width:39px;height:39px;display:grid;place-items:center;border-radius:10px;background:#ffe071;font-size:23px}
+.game-action-title strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.game-action-buttons{display:flex;align-items:center;gap:5px}
+.game-action{min-width:57px;display:flex;flex-direction:column;align-items:center;gap:1px;padding:4px 8px;border:0;border-radius:9px;background:transparent;color:#1495c6;font:inherit;font-size:21px;cursor:pointer}
+.game-action span{color:#42677a;font-size:8px;font-weight:800}
+.game-action:hover{background:#e7fbf7}.game-action[aria-pressed=true]{background:#d7f8ed;color:#087e90}
+.center-column{gap:0}
+.game-frame-wrap{height:calc(100% - 58px);flex:none}
+.game-actionbar{flex:0 0 54px}
+.load-error{background:#f8ffff;color:#204e65}
+.load-error a{color:#137fa2}
+.player-footer{color:#3e6b76}
+.player-footer a{color:#214e62}
+.ad-slot{border-color:#ffffffb5;background:#ffffff8f;color:#426e78}
+@media(max-width:1000px){.game-actionbar{min-height:50px;flex-basis:50px;padding-inline:7px}.game-frame-wrap{height:calc(100% - 54px)}}
+@media(max-width:680px){.game-frame-wrap{height:calc(100% - 52px)}.game-actionbar{min-height:48px;flex-basis:48px;border-radius:0 0 12px 12px}.game-action-title{font-size:12px}.game-action-title>span{width:33px;height:33px;font-size:20px}.game-action{min-width:43px;padding:4px;font-size:18px}.game-action span{font-size:7px}}

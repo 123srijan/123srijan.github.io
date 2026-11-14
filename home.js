@@ -17,7 +17,11 @@
     for (const card of cards) {
       const title = card.dataset.title || card.querySelector('.game-card-title')?.textContent.trim() || card.dataset.name.split(/\s+/).slice(0, 5).join(' ');
       card.setAttribute('aria-label', `Play ${title}`);
-      card.dataset.gameId ||= card.getAttribute('href') || title;
+      if (!card.dataset.gameId) {
+        const cardUrl = new URL(card.getAttribute('href') || '', location.href);
+        const cardParams = new URLSearchParams(cardUrl.search);
+        card.dataset.gameId = cardParams.has('partner') ? `arcade-player.html?partner=${cardParams.get('partner')}` : `arcade-player.html?game=${cardParams.get('game') || title}`;
+      }
       const copy = card.querySelector('.game-card-copy');
       const play = copy?.querySelector('.play-link');
       if (copy && play) {

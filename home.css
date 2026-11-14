@@ -120,6 +120,39 @@ body{background:radial-gradient(ellipse at 12% 4%,#f4ffff 0 10%,transparent 34%)
 @media(max-width:460px){.game-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:82px;gap:8px}.game-tile:nth-child(10n + 1){grid-column:span 2;grid-row:span 3}.game-tile:nth-child(10n + 4){grid-row:span 2}.game-tile:nth-child(10n + 7){grid-column:span 1;grid-row:span 2}.game-tile .game-art{min-height:82px}.collection-chip{padding:7px 10px;font-size:10px}}
 @media(prefers-reduced-motion:reduce){.game-tile{animation:none}}
 
+/* Desktop arcade portal: compact side navigation and a full-bleed game wall. */
+@media(min-width:761px){
+  body{background:linear-gradient(135deg,#7ce9dc 0%,#a9f2e8 54%,#c5f5ed 100%)}
+  .site-header{position:fixed;z-index:40;top:14px;left:13px;width:74px;height:152px;margin:0;padding:10px 6px;display:flex;flex-direction:column;justify-content:flex-start;gap:10px;border:3px solid #fff;border-radius:20px;background:#fff;box-shadow:0 7px 0 #49cabb50,0 14px 26px #226c6550}
+  .site-header .brand{width:100%;flex-direction:column;gap:4px;font-size:8px;letter-spacing:.04em;text-align:center}
+  .site-header .brand-symbol{width:39px;height:39px;border-radius:13px;background:#fff3d0;color:#344873;box-shadow:none;font-size:25px}
+  .site-header .brand-accent{color:#31476b}
+  .site-nav{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4px;border-top:1px solid #edf0ea;padding-top:6px}
+  .site-nav a{min-height:38px;display:grid;align-content:center;justify-items:center;gap:0;color:#1c5a70;font-size:18px}
+  .site-nav a small{font-size:7px;font-weight:850}
+  .hero{position:static;height:0;max-width:none;padding:0;margin:0;isolation:auto}
+  .hero h1,.hero-copy,.hero>.eyebrow,.hero-stars,.hero-orbit{display:none}
+  .search-form{position:fixed;z-index:35;top:15px;left:103px;right:22px;width:auto;max-width:none;height:47px;border:2px solid #fff;border-radius:15px;background:#fff;box-shadow:0 5px 0 #49cabb45,0 9px 20px #246b6730}
+  .category-list{position:fixed;z-index:35;top:72px;left:103px;right:20px;justify-content:flex-start;gap:8px;margin:0;padding:0;pointer-events:auto}
+  .category-chip{border:2px solid #ffffff;background:#ffffffd9;box-shadow:0 3px 0 #49cabb45;color:#244e66}
+  .category-chip.active{background:#244b69;border-color:#244b69;color:white;box-shadow:0 3px 0 #15354f}
+  .collection-filters{position:fixed;z-index:35;top:114px;left:103px;right:20px;justify-content:flex-start;gap:8px;margin:0;pointer-events:auto}
+  .collection-chip{background:#fffdf1e8;box-shadow:0 3px 0 #47bdb244}
+  .library{width:auto;max-width:none;margin:0 0 0 93px;padding:163px 17px 48px}
+  .library-heading{margin:0 4px 10px;align-items:center}
+  .library-heading .small-eyebrow{display:none}
+  .library-heading h2{font-size:19px;color:#12465d}
+  .result-count{color:#27677b}
+  .game-grid{grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:minmax(85px,8.5vw);gap:12px}
+  .game-tile .game-card{border-radius:18px;box-shadow:0 5px 0 #39b9ae5e,0 10px 18px #236c6535}
+  .game-tile .game-art{border-radius:13px 13px 11px 11px}
+  .game-tile:nth-child(10n + 1){grid-column:span 2;grid-row:span 3}
+  .game-tile:nth-child(10n + 7){grid-column:span 2;grid-row:span 2}
+  .about-section{margin-left:108px;margin-right:22px}
+  .site-footer{margin-left:93px}
+}
+@media(max-width:760px){.site-header .brand{gap:6px}.site-nav a{display:flex;align-items:center}}
+
 /* Approved GamePix catalog and on-page player */
 .partner-library[hidden]{display:none}.partner-intro{margin:-7px 0 20px;color:var(--muted);font-size:13px;line-height:1.55}
 .partner-game-card:focus-visible{outline:3px solid #6651c9;outline-offset:3px}

@@ -27,6 +27,14 @@
           <iframe id="gameFrame" title="Game" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
           <div class="load-error" id="loadError" hidden>We couldn’t open this game. <a href="index.html#games">Choose another game</a>.</div>
         </div>
+        <div class="game-actionbar" id="gameActionbar">
+          <div class="game-action-title"><span id="gameBadge" aria-hidden="true">🎮</span><strong id="actionGameTitle">Loading game…</strong></div>
+          <div class="game-action-buttons" role="group" aria-label="Game actions">
+            <button class="game-action" type="button" data-reaction="like" aria-label="Like game" aria-pressed="false">👍 <span>Like</span></button>
+            <button class="game-action" type="button" data-reaction="dislike" aria-label="Dislike game" aria-pressed="false">👎 <span>Dislike</span></button>
+            <button class="game-action" type="button" data-reaction="favorite" aria-label="Add to favorites" aria-pressed="false">☆ <span>Favorite</span></button>
+          </div>
+        </div>
       </section>
 
       <aside class="side-rail right-rail" aria-label="Recommended games">

@@ -19,6 +19,10 @@
   const frame = document.querySelector('#gameFrame');
   const error = document.querySelector('#loadError');
   const fullscreen = document.querySelector('#fullscreenGame');
+  const actionTitle = document.querySelector('#actionGameTitle');
+  const gameBadge = document.querySelector('#gameBadge');
+  const actionButtons = [...document.querySelectorAll('[data-reaction]')];
+  const preferenceKey = 'gamebox-library-v1';
   let partnerGames = [];
 
   function safeInternal(path) {
@@ -80,6 +84,8 @@
   function chooseGame() {
     if (current) {
       title.textContent = current.title;
+      actionTitle.textContent = current.title;
+      gameBadge.textContent = current.emoji;
       const path = safeInternal(routes[current.id]);
       if (path) { frame.src = path; return; }
     }
@@ -91,6 +97,8 @@
         const selected = games.find(item => String(item.id) === partnerId);
         if (!selected) throw new Error('Game not found');
         title.textContent = selected.title;
+        actionTitle.textContent = selected.title;
+        gameBadge.textContent = '🎮';
         const path = safeInternal(`playgama-play.html?id=${encodeURIComponent(selected.id)}`);
         if (!path) throw new Error('Invalid game path');
         frame.src = path;
@@ -104,6 +112,36 @@
   frame.addEventListener('load', simplifyOwnedGame);
   renderRecommendations();
   chooseGame();
+  function getPreferenceKey() {
+    if (gameId) return `arcade-player.html?game=${encodeURIComponent(gameId)}`;
+    if (partnerId) return `arcade-player.html?partner=${encodeURIComponent(partnerId)}`;
+    return '';
+  }
+  function readPreferences() {
+    try { return JSON.parse(localStorage.getItem(preferenceKey) || '{}') || {}; } catch { return {}; }
+  }
+  function updateActionButtons() {
+    const saved = readPreferences()[getPreferenceKey()] || {};
+    actionButtons.forEach(button => {
+      const kind = button.dataset.reaction;
+      const active = kind === 'favorite' ? Boolean(saved.favorite) : saved.reaction === kind;
+      button.setAttribute('aria-pressed', String(active));
+      if (kind === 'favorite') button.firstChild.textContent = active ? '★ ' : '☆ ';
+    });
+  }
+  actionButtons.forEach(button => button.addEventListener('click', () => {
+    const key = getPreferenceKey();
+    if (!key) return;
+    const preferences = readPreferences();
+    const saved = preferences[key] || {};
+    const kind = button.dataset.reaction;
+    if (kind === 'favorite') saved.favorite = !saved.favorite;
+    else saved.reaction = saved.reaction === kind ? '' : kind;
+    preferences[key] = saved;
+    try { localStorage.setItem(preferenceKey, JSON.stringify(preferences)); } catch {}
+    updateActionButtons();
+  }));
+  updateActionButtons();
   fetch('playgama-games.json').then(response => response.ok ? response.json() : []).then(games => {
     const allowedHosts = new Set(['playgama.com','deadlydescent.net','mrracer.online','blockblastmaster.io','snake-2048.com','stickmankombat.io']);
     partnerGames = games.filter(game => {
