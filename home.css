@@ -89,6 +89,35 @@ body{background:radial-gradient(ellipse at 12% 4%,#fff4c9 0 10%,transparent 34%)
 @media(max-width:390px){.game-art{height:132px}.game-logo{font-size:23px}.game-card-copy{min-height:49px;padding-inline:8px;padding-bottom:9px}}
 @media(prefers-reduced-motion:reduce){.brand-symbol,.game-logo,.game-card,.game-card:hover .play-link{animation:none;transition:none}}
 
+/* A visual-first arcade shelf with personal game filters. */
+.collection-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:13px auto 0}
+.collection-chip{border:1px solid #fff;background:#fff9e7;color:#51456c;border-radius:999px;padding:8px 13px;font:inherit;font-size:11px;font-weight:800;cursor:pointer;box-shadow:0 3px 0 #e5c779;transition:transform .16s,background .16s}
+.collection-chip:hover{transform:translateY(-2px)}.collection-chip.active{background:#343064;color:white;border-color:#343064;box-shadow:0 3px 0 #252249}
+.game-grid{grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:minmax(84px,8.2vw);grid-auto-flow:dense;gap:14px}
+.game-tile{position:relative;min-width:0;min-height:0;overflow:visible;animation:tilePop .5s both}
+.game-tile.is-filtered-out{display:none}
+.game-tile .game-card{width:100%;height:100%;min-height:100%;border-radius:20px}
+.game-tile .game-art{height:calc(100% - 51px);min-height:100px;flex:1 1 auto}
+.game-tile .game-card-copy{min-height:48px;padding:4px 10px 9px}
+.game-tile .play-link{width:100%;margin:0;padding:8px 12px;font-size:10px}
+.game-tile:nth-child(10n + 1){grid-column:span 2;grid-row:span 3}
+.game-tile:nth-child(10n + 4){grid-row:span 2}
+.game-tile:nth-child(10n + 7){grid-column:span 2;grid-row:span 2}
+.game-tile:nth-child(10n + 9){grid-row:span 2}
+.game-tile:nth-child(10n + 1) .game-art{min-height:250px}
+.game-tile:nth-child(10n + 7) .game-art{min-height:170px}
+.game-reactions{position:absolute;z-index:5;top:11px;right:11px;display:flex;gap:5px;padding:4px;border:1px solid #ffffff9c;border-radius:999px;background:#fffdf0e8;box-shadow:0 3px 10px #26223b30;opacity:0;transform:translateY(-4px);transition:opacity .18s,transform .18s}
+.game-tile:hover .game-reactions,.game-tile:focus-within .game-reactions{opacity:1;transform:translateY(0)}
+.reaction-button{width:29px;height:29px;display:grid;place-items:center;border:0;border-radius:50%;background:transparent;font-size:15px;line-height:1;cursor:pointer;transition:background .15s,transform .15s}
+.reaction-button:hover{background:#efe9ff;transform:scale(1.12)}.reaction-button[aria-pressed=true]{background:#6554c0;color:#fff}
+.reaction-favorite[aria-pressed=true]{background:#ffcf62;color:#4c3b5b}
+.game-tile .partner-game-art img{object-fit:cover}
+@keyframes tilePop{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:1100px){.game-grid{grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-rows:minmax(80px,10vw)}}
+@media(max-width:760px){.game-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:90px;gap:9px}.game-tile:nth-child(10n + 1){grid-row:span 3}.game-tile:nth-child(10n + 7){grid-column:span 2;grid-row:span 2}.game-tile:nth-child(10n + 4),.game-tile:nth-child(10n + 9){grid-row:span 2}.game-reactions{opacity:1;transform:none;top:6px;right:6px;gap:2px;padding:2px}.reaction-button{width:24px;height:24px;font-size:12px}.game-tile .game-art{height:calc(100% - 46px)}}
+@media(max-width:460px){.game-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:82px;gap:8px}.game-tile:nth-child(10n + 1){grid-column:span 2;grid-row:span 3}.game-tile:nth-child(10n + 4){grid-row:span 2}.game-tile:nth-child(10n + 7){grid-column:span 1;grid-row:span 2}.game-tile .game-art{min-height:82px}.collection-chip{padding:7px 10px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.game-tile{animation:none}}
+
 /* Approved GamePix catalog and on-page player */
 .partner-library[hidden]{display:none}.partner-intro{margin:-7px 0 20px;color:var(--muted);font-size:13px;line-height:1.55}
 .partner-game-card:focus-visible{outline:3px solid #6651c9;outline-offset:3px}

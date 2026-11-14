@@ -59,3 +59,15 @@
 .bottom-ad{margin-top:150px;min-height:110px}
 @media(max-width:1000px){.recommendation-card{min-height:62px}.bottom-recommendations .recommendation-card{min-height:62px}}
 @media(max-width:680px){.below-row{grid-template-columns:1fr;margin-top:48px}.bottom-ad{margin-top:90px;min-height:90px}.recommendation-card{min-height:58px}}
+
+/* Larger image-first picks, arranged around the active game. */
+.side-rail .recommendation-list{grid-template-columns:1fr;gap:10px}
+.side-rail .recommendation-card{display:grid;grid-template-columns:minmax(0,1fr);justify-items:center;gap:5px;min-height:0;padding:7px;text-align:center}
+.side-rail .recommendation-art{width:100%;height:clamp(98px,13vh,142px);flex:auto;border-radius:11px;font-size:33px}
+.side-rail .recommendation-title{font-size:9px}.side-rail .recommendation-play{margin-top:1px;font-size:8px}
+.bottom-recommendations{grid-template-columns:repeat(6,minmax(0,1fr))}
+.bottom-recommendations .recommendation-card{display:flex;flex-direction:column;justify-content:center;gap:5px;min-height:0;padding:7px}
+.bottom-recommendations .recommendation-art{width:100%;height:clamp(72px,9vw,116px);flex:auto;border-radius:10px;font-size:27px}
+.bottom-recommendations .recommendation-title{font-size:9px}.bottom-recommendations .recommendation-play{font-size:8px}
+@media(max-width:1000px){.side-rail .recommendation-art{height:clamp(88px,12vh,120px)}.bottom-recommendations{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:680px){.side-rail .recommendation-list{grid-template-columns:repeat(3,minmax(0,1fr))}.side-rail .recommendation-art{height:clamp(72px,20vw,120px)}.bottom-recommendations{grid-template-columns:repeat(3,minmax(0,1fr))}.bottom-recommendations .recommendation-art{height:clamp(76px,23vw,110px)}}
