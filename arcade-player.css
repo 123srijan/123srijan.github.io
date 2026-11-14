@@ -8,3 +8,24 @@
 @keyframes spin{to{transform:rotate(360deg)}}
 @media(max-width:1000px){.dashboard-grid{grid-template-columns:minmax(0,1fr) 190px}.left-rail{display:none}.right-rail{padding:10px}.recommendation-card{min-height:56px}.bottom-recommendations{grid-template-columns:repeat(4,minmax(0,1fr))}.game-frame-wrap{height:72vh}}
 @media(max-width:680px){.player-header{height:auto;min-height:58px;grid-template-columns:1fr auto;gap:7px;padding-top:8px;padding-bottom:8px}.player-header h1{grid-column:1/-1;grid-row:2;display:block;font-size:14px}.back-link{font-size:11px}.dashboard{padding:10px 9px 20px}.dashboard-grid{grid-template-columns:1fr;gap:11px}.center-column{grid-row:1}.game-frame-wrap{height:68vh;min-height:360px;border-radius:12px}.right-rail{grid-row:2}.right-rail .recommendation-list{grid-template-columns:repeat(2,minmax(0,1fr))}.right-rail .recommendation-card{min-height:56px}.right-rail .side-ad{min-height:90px}.below-row{grid-template-columns:1fr;gap:10px}.bottom-recommendations{grid-template-columns:repeat(2,minmax(0,1fr))}.bottom-ad{min-height:90px}.player-tools{font-size:8px}.player-footer{padding:12px}}
+
+/* Keep recommendations around the player at every desktop and tablet width. */
+.top-recommendations{margin:0 0 14px;padding:13px;border:1px solid var(--line);border-radius:17px;background:#171d36;overflow:hidden}
+.top-recommendation-list{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(110px,1fr);gap:9px;overflow-x:auto;padding:2px 2px 6px;scroll-snap-type:x proximity}
+.top-recommendation-list .recommendation-card{display:grid;justify-items:center;align-content:center;gap:5px;min-height:92px;text-align:center;scroll-snap-align:start}
+.top-recommendation-list .recommendation-art{width:46px;height:46px}
+.top-recommendation-list .recommendation-title{font-size:10px}
+@media(max-width:1000px){
+  .dashboard-grid{grid-template-columns:minmax(112px,.78fr) minmax(0,3.1fr) minmax(112px,.78fr);gap:9px}
+  .left-rail{display:block}.side-rail{padding:9px}.recommendation-card{gap:6px;padding:5px}.recommendation-art{width:38px;height:38px;flex-basis:38px;font-size:21px}.recommendation-title{font-size:9px}.side-ad{min-height:100px}
+  .top-recommendation-list{grid-auto-columns:minmax(105px,1fr)}
+}
+@media(max-width:680px){
+  .dashboard-grid{grid-template-columns:minmax(62px,.62fr) minmax(0,4fr) minmax(62px,.62fr);gap:5px;align-items:start}
+  .left-rail,.right-rail{display:block;padding:5px;border-radius:11px}.rail-heading{font-size:7px;letter-spacing:.08em;line-height:1.3}
+  .recommendation-list{gap:5px}.recommendation-card{flex-direction:column;justify-content:center;gap:3px;min-height:64px;padding:4px 2px;text-align:center;border-radius:9px}
+  .recommendation-art{width:34px;height:34px;flex:0 0 34px;font-size:19px}.recommendation-title{font-size:7px;overflow-wrap:anywhere}.recommendation-play{margin-top:2px;font-size:7px}
+  .side-ad{min-height:66px;margin-top:7px}.side-ad span{font-size:6px;letter-spacing:.08em}
+  .center-column{grid-row:auto;min-width:0}.game-frame-wrap{height:68vh;min-height:330px;border-radius:11px}.top-recommendations{padding:8px;margin-bottom:9px}.top-recommendation-list{grid-auto-columns:92px;gap:6px}.top-recommendation-list .recommendation-card{min-height:78px}.top-recommendation-list .recommendation-art{width:36px;height:36px}
+  .right-rail .recommendation-list{grid-template-columns:1fr}.below-row{grid-template-columns:1fr;gap:8px}.bottom-recommendations{grid-template-columns:repeat(2,minmax(0,1fr))}.bottom-ad{min-height:80px}
+}

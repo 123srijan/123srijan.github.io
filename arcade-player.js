@@ -10,7 +10,7 @@
     { id:'tic-tac-toe', title:'Tic Tac Trio', emoji:'⭕', a:'#3975ca', b:'#7c5bd2', categories:['puzzle'] },
     { id:'territory-trail', title:'Territory Trail', emoji:'🗺️', a:'#258b86', b:'#59bd74', categories:['action','puzzle'] }
   ];
-  const routes = Object.fromEntries(owned.map(game => [game.id, `${game.id === 'fruit-swipe' || game.id === 'tic-tac-toe' || game.id === 'territory-trail' ? `play.html?game=${game.id}` : `${game.id}/`}`]));
+  const routes = Object.fromEntries(owned.map(game => [game.id, `${game.id === 'tower-builder' ? 'stack-panic/' : game.id === 'fruit-swipe' || game.id === 'tic-tac-toe' || game.id === 'territory-trail' ? `play.html?game=${game.id}` : `${game.id}/`}`]));
   const params = new URLSearchParams(location.search);
   const gameId = params.get('game');
   const partnerId = params.get('partner');
@@ -58,12 +58,12 @@
     return card;
   }
   function renderRecommendations() {
-    const shelves = ['#leftRecommendations','#rightRecommendations','#bottomRecommendations'].map(selector => document.querySelector(selector));
+    const shelves = ['#topRecommendations','#leftRecommendations','#rightRecommendations','#bottomRecommendations'].map(selector => document.querySelector(selector));
     shelves.forEach((shelf, index) => {
       if (!shelf) return;
       const candidates = [...owned.filter(game => game.id !== gameId), ...partnerGames.filter(game => String(game.id) !== String(partnerId))];
-      const offset = index * 3;
-      const amount = index === 2 ? 5 : 3;
+      const offset = [0, 4, 8, 12][index];
+      const amount = [6, 4, 4, 8][index];
       candidates.slice(offset, offset + amount).forEach(game => shelf.append(makeRecommendation(game, game.emoji ? 'owned' : 'partner')));
     });
   }
@@ -99,7 +99,7 @@
     partnerGames = games.filter(game => {
       try { const url = new URL(game.gameURL); return url.protocol === 'https:' && allowedHosts.has(url.hostname) && game.title; } catch { return false; }
     }).slice(0, 30);
-    ['#leftRecommendations','#rightRecommendations','#bottomRecommendations'].forEach(selector => document.querySelector(selector).replaceChildren());
+    ['#topRecommendations','#leftRecommendations','#rightRecommendations','#bottomRecommendations'].forEach(selector => document.querySelector(selector).replaceChildren());
     renderRecommendations();
   }).catch(() => {});
 })();
