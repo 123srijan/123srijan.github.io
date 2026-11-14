@@ -13,14 +13,10 @@
   <header class="player-header">
     <a class="brand" href="index.html"><span aria-hidden="true">✳</span> GAMEBOX ARCADE</a>
     <h1 id="playerTitle">Loading game…</h1>
-    <a class="back-link" href="index.html#games">← All games</a>
+    <div class="header-actions"><button id="fullscreenGame" class="fullscreen-button" type="button" aria-label="Play fullscreen" title="Play fullscreen">⛶</button><a class="back-link" href="index.html#games">← All games</a></div>
   </header>
 
   <main class="dashboard">
-    <section class="top-recommendations" aria-label="Recommended games">
-      <div class="rail-heading">JUMP INTO A GAME</div>
-      <div id="topRecommendations" class="top-recommendation-list"></div>
-    </section>
     <div class="dashboard-grid">
       <aside class="side-rail left-rail" aria-label="Recommended games and advertisement">
         <div class="rail-heading">TRY THESE NEXT</div>
@@ -33,7 +29,6 @@
           <iframe id="gameFrame" title="Game" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
           <div class="load-error" id="loadError" hidden>We couldn’t open this game. <a href="index.html#games">Choose another game</a>.</div>
         </div>
-        <div class="player-tools"><span>PLAYING ON GAMEBOX ARCADE</span><a id="openGame" href="#" target="_blank" rel="noopener">Open game in a new tab ↗</a></div>
       </section>
 
       <aside class="side-rail right-rail" aria-label="More games and advertisement">

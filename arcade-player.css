@@ -29,3 +29,20 @@
   .center-column{grid-row:auto;min-width:0}.game-frame-wrap{height:68vh;min-height:330px;border-radius:11px}.top-recommendations{padding:8px;margin-bottom:9px}.top-recommendation-list{grid-auto-columns:92px;gap:6px}.top-recommendation-list .recommendation-card{min-height:78px}.top-recommendation-list .recommendation-art{width:36px;height:36px}
   .right-rail .recommendation-list{grid-template-columns:1fr}.below-row{grid-template-columns:1fr;gap:8px}.bottom-recommendations{grid-template-columns:repeat(2,minmax(0,1fr))}.bottom-ad{min-height:80px}
 }
+
+@media(max-width:680px){.right-rail{grid-row:auto}}
+
+/* Desktop play mode: give the game the viewport and keep navigation quiet. */
+.player-header{height:54px;grid-template-columns:1fr minmax(120px,2fr) 1fr;padding-inline:20px}
+.header-actions{display:flex;align-items:center;justify-self:end;gap:13px}
+.fullscreen-button{width:34px;height:34px;border:1px solid var(--line);border-radius:10px;background:#ffffff0a;color:var(--ink);font-size:23px;line-height:1;cursor:pointer}
+.fullscreen-button:hover{border-color:var(--yellow);color:var(--yellow)}
+.dashboard{height:calc(100vh - 54px);padding:10px 14px 14px;}
+.dashboard-grid{height:100%;grid-template-columns:minmax(142px,170px) minmax(0,1fr) minmax(150px,180px);gap:11px;align-items:stretch}
+.side-rail{height:100%;overflow-y:auto;padding:10px}
+.center-column{height:100%;min-height:0}
+.game-frame-wrap{height:100%;min-height:0;flex:1 1 auto;border-radius:13px}
+.player-tools{display:none}
+.below-row{margin-top:12px}
+@media(max-width:1000px){.player-header{height:50px}.dashboard{height:calc(100vh - 50px);padding:8px}.dashboard-grid{height:100%;grid-template-columns:minmax(120px,.72fr) minmax(0,3.1fr) minmax(120px,.72fr);gap:8px}.game-frame-wrap{height:auto;min-height:0}.side-rail{padding:8px}}
+@media(max-width:680px){.dashboard{height:auto;min-height:calc(100vh - 50px)}.dashboard-grid{height:auto;grid-template-columns:1fr}.left-rail,.right-rail{height:auto;overflow:visible}.center-column{height:68vh;min-height:400px}.game-frame-wrap{height:100%}.right-rail{grid-row:auto}.below-row{margin-top:9px}}

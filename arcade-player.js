@@ -18,7 +18,7 @@
   const title = document.querySelector('#playerTitle');
   const frame = document.querySelector('#gameFrame');
   const error = document.querySelector('#loadError');
-  const open = document.querySelector('#openGame');
+  const fullscreen = document.querySelector('#fullscreenGame');
   let partnerGames = [];
 
   function safeInternal(path) {
@@ -58,12 +58,12 @@
     return card;
   }
   function renderRecommendations() {
-    const shelves = ['#topRecommendations','#leftRecommendations','#rightRecommendations','#bottomRecommendations'].map(selector => document.querySelector(selector));
+    const shelves = ['#leftRecommendations','#rightRecommendations','#bottomRecommendations'].map(selector => document.querySelector(selector));
     shelves.forEach((shelf, index) => {
       if (!shelf) return;
       const candidates = [...owned.filter(game => game.id !== gameId), ...partnerGames.filter(game => String(game.id) !== String(partnerId))];
-      const offset = [0, 4, 8, 12][index];
-      const amount = [6, 4, 4, 8][index];
+      const offset = [0, 3, 6][index];
+      const amount = [3, 3, 10][index];
       candidates.slice(offset, offset + amount).forEach(game => shelf.append(makeRecommendation(game, game.emoji ? 'owned' : 'partner')));
     });
   }
@@ -71,7 +71,7 @@
     if (current) {
       title.textContent = current.title;
       const path = safeInternal(routes[current.id]);
-      if (path) { frame.src = path; open.href = path; return; }
+      if (path) { frame.src = path; return; }
     }
     if (partnerId) {
       fetch('playgama-games.json').then(response => {
@@ -84,7 +84,6 @@
         const path = safeInternal(`playgama-play.html?id=${encodeURIComponent(selected.id)}`);
         if (!path) throw new Error('Invalid game path');
         frame.src = path;
-        open.href = path;
       }).catch(() => { error.hidden = false; title.textContent = 'Game unavailable'; });
       return;
     }
@@ -99,7 +98,10 @@
     partnerGames = games.filter(game => {
       try { const url = new URL(game.gameURL); return url.protocol === 'https:' && allowedHosts.has(url.hostname) && game.title; } catch { return false; }
     }).slice(0, 30);
-    ['#topRecommendations','#leftRecommendations','#rightRecommendations','#bottomRecommendations'].forEach(selector => document.querySelector(selector).replaceChildren());
+    ['#leftRecommendations','#rightRecommendations','#bottomRecommendations'].forEach(selector => document.querySelector(selector).replaceChildren());
     renderRecommendations();
   }).catch(() => {});
+  fullscreen?.addEventListener('click', () => {
+    if (frame.requestFullscreen) frame.requestFullscreen();
+  });
 })();
