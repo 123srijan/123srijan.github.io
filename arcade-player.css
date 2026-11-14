@@ -48,3 +48,14 @@
 @media(max-width:680px){.dashboard{height:auto;min-height:calc(100vh - 50px)}.dashboard-grid{height:auto;grid-template-columns:1fr}.left-rail,.right-rail{height:auto;overflow:visible}.center-column{height:68vh;min-height:400px}.game-frame-wrap{height:100%}.right-rail{grid-row:auto}.below-row{margin-top:9px}}
 
 @media(max-width:680px){.center-column{order:1}.left-rail{order:2}.right-rail{order:3}}
+
+/* Quiet in-game chrome: show game artwork and play controls only. */
+.recommendation-card{flex-direction:column;justify-content:center;gap:4px;min-height:68px;text-align:center}
+.recommendation-title{min-height:14px;display:flex;align-items:center;justify-content:center;margin:0}
+.recommendation-play{margin-top:0}
+.bottom-recommendations .recommendation-card{display:flex;min-height:68px}
+.bottom-recommendations .recommendation-art{width:44px;height:44px;flex-basis:44px}
+.below-row{grid-template-columns:1fr;gap:0;margin-top:150px}
+.bottom-ad{margin-top:150px;min-height:110px}
+@media(max-width:1000px){.recommendation-card{min-height:62px}.bottom-recommendations .recommendation-card{min-height:62px}}
+@media(max-width:680px){.below-row{grid-template-columns:1fr;margin-top:48px}.bottom-ad{margin-top:90px;min-height:90px}.recommendation-card{min-height:58px}}

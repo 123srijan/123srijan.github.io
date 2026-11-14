@@ -28,6 +28,7 @@
   function makeRecommendation(game, kind='owned') {
     const card = document.createElement('a');
     card.className = 'recommendation-card';
+    card.setAttribute('aria-label', `Play ${game.title}`);
     const destination = kind === 'partner'
       ? `arcade-player.html?partner=${encodeURIComponent(game.id)}`
       : `arcade-player.html?game=${encodeURIComponent(game.id)}`;
@@ -36,7 +37,6 @@
     art.className = 'recommendation-art';
     const name = document.createElement('span');
     name.className = 'recommendation-title';
-    name.textContent = game.title;
     const play = document.createElement('span');
     play.className = 'recommendation-play';
     play.textContent = 'PLAY';
@@ -67,6 +67,16 @@
       candidates.slice(offset, offset + amount).forEach(game => shelf.append(makeRecommendation(game, game.emoji ? 'owned' : 'partner')));
     });
   }
+  function simplifyOwnedGame() {
+    try {
+      const doc = frame.contentDocument;
+      if (!doc || doc.getElementById('gamebox-compact-embed')) return;
+      const style = doc.createElement('style');
+      style.id = 'gamebox-compact-embed';
+      style.textContent = '.arcade-top,.game-intro,.info-panel,.page-footer,.action-note,.campaign-badge{display:none!important}.arcade-shell{width:100%!important;max-width:none!important;margin:0!important;padding:8px!important}.game-layout{display:block!important}.game-card-panel{width:100%!important;margin:0!important;border-radius:12px!important}';
+      doc.head.append(style);
+    } catch { /* Partner games may be hosted on another site. */ }
+  }
   function chooseGame() {
     if (current) {
       title.textContent = current.title;
@@ -91,6 +101,7 @@
     title.textContent = 'Choose a game';
   }
   frame.addEventListener('error', () => { error.hidden = false; });
+  frame.addEventListener('load', simplifyOwnedGame);
   renderRecommendations();
   chooseGame();
   fetch('playgama-games.json').then(response => response.ok ? response.json() : []).then(games => {
