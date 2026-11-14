@@ -20,7 +20,7 @@
   function gameLink(game) {
     const url = new URL(game.gameURL);
     if (url.protocol !== 'https:' || !allowedGameHosts.has(url.hostname)) return null;
-    return `playgama-play.html?id=${encodeURIComponent(game.id)}`;
+    return `arcade-player.html?partner=${encodeURIComponent(game.id)}`;
   }
 
   function makeCard(game) {

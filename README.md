@@ -2,7 +2,8 @@
 
 An original browser arcade hosted on GitHub Pages. Every game card opens a game on this site; there are no outbound game redirects.
 
-- index.html, home.css, and home.js: animated, searchable, category-filtered shelf for 15 original games
+- index.html, home.css, and home.js: animated, searchable, category-filtered game shelf
+- arcade-player.html, arcade-player.css, and arcade-player.js: centered player with related games at the sides and below, plus reserved advertisement spaces
 - star-patrol/: 50-wave space war campaign with escalating enemy patterns and boss battles
 - prism-path/: 60-level mirror puzzle
 - cricket-cup/: timing-based six-ball cricket challenge with a detailed animated field
