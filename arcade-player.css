@@ -46,3 +46,5 @@
 .below-row{margin-top:12px}
 @media(max-width:1000px){.player-header{height:50px}.dashboard{height:calc(100vh - 50px);padding:8px}.dashboard-grid{height:100%;grid-template-columns:minmax(120px,.72fr) minmax(0,3.1fr) minmax(120px,.72fr);gap:8px}.game-frame-wrap{height:auto;min-height:0}.side-rail{padding:8px}}
 @media(max-width:680px){.dashboard{height:auto;min-height:calc(100vh - 50px)}.dashboard-grid{height:auto;grid-template-columns:1fr}.left-rail,.right-rail{height:auto;overflow:visible}.center-column{height:68vh;min-height:400px}.game-frame-wrap{height:100%}.right-rail{grid-row:auto}.below-row{margin-top:9px}}
+
+@media(max-width:680px){.center-column{order:1}.left-rail{order:2}.right-rail{order:3}}
