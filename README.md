@@ -11,6 +11,7 @@ An original browser arcade hosted on GitHub Pages. Every game card opens a game 
 - bubble-burst/: 60 progressive boards, with endless play after level 60
 - block-workshop/: 60 progressively harder shape-placement levels plus endless play
 - tower-builder/: precision tower-building arcade game
+- mini-games.js: 42 short original arcade and puzzle games, including Arrow Escape Puzzle, with mode-specific goals and controls
 - chicken-crossing/: original lane-dodging road hopper
 - skyline-runner/: original three-lane endless runner
 - fruit-swipe/: original fruit slicing arcade game
@@ -30,10 +31,12 @@ An original browser arcade hosted on GitHub Pages. Every game card opens a game 
 
 The homepage has four reserved display-ad placements. Game pages have one more space below recommendations or below the mini-game board, well away from active play. All are inactive placeholders until real ad units are installed; they do not earn revenue yet. See [AD-NETWORK-SETUP.md](AD-NETWORK-SETUP.md) for the AdSense-first plan and [PARTNER-NETWORK-SETUP.md](PARTNER-NETWORK-SETUP.md) for partner catalog details.
 
+See [GAMEPLAY-GUIDE.md](GAMEPLAY-GUIDE.md) for the mini-game rules and controls, plus the distinction between original games and licensed partner titles.
+
 
 
 ## Original mini-game collection
 
-The arcade now includes more than 50 original browser games. Forty lightweight, animated mini-games share a small set of reusable mechanics (tap, catch, dodge, memory, pairs, timing, and reaction) with distinct names, themes, colors, and local best scores. Each mini-game has its own playable link from the home page.
+The arcade now includes more than 50 original browser games. Forty-two lightweight mini-games use a set of reusable mechanics (tap, catch, dodge, memory, pairs, timing, reaction, and arrow routing) with distinct names, themes, colors, and local best scores. Each mini-game has its own playable link from the home page.
 
 Star Catcher, Bubble Pop Party, Fruit Flick, Cookie Catch, Meteor Dodge, Garden Dash, Penguin Paddle, Rocket Raccoon Run, Rainbow Runner, Coral Reef Dash, Pixel Memory, Starry Sequence, Color Comet, Music Memo, Gem Garden, Pocket Pairs, Ocean Pairs, Snack Match, Dino Match, Space Pairs, Perfect Pounce, Drum Beat Dash, Ice Cream Scoop, Goal Line Glory, Neon Stoplight, Quick Click Critter, Lightning Tap, Robot Reflex, Panda Pop, Cherry Chase, Sky Bubble Basket, Turtle Treasure, Cloud Catcher, Candy Catcher, Firework Frenzy, Little Lanterns, Jelly Jump, Pumpkin Popper, Snowflake Spark, Magic Mushroom Mix, Tiny Treasure Tap.

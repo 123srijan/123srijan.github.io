@@ -20,7 +20,7 @@
       if (!card.dataset.gameId) {
         const cardUrl = new URL(card.getAttribute('href') || '', location.href);
         const cardParams = new URLSearchParams(cardUrl.search);
-        card.dataset.gameId = cardParams.has('partner') ? `arcade-player.html?partner=${cardParams.get('partner')}` : `arcade-player.html?game=${cardParams.get('game') || title}`;
+        card.dataset.gameId = cardParams.has('partner') ? `arcade-player.html?partner=${cardParams.get('partner')}` : cardParams.has('mini') ? `arcade-player.html?mini=${cardParams.get('mini')}` : `arcade-player.html?game=${cardParams.get('game') || title}`;
       }
       const copy = card.querySelector('.game-card-copy');
       const play = copy?.querySelector('.play-link');
