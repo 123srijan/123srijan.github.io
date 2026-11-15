@@ -23,9 +23,10 @@ An original browser arcade hosted on GitHub Pages. Every game card opens a game 
 
 ## Playgama partner catalog
 
-`playgama-games.json` contains the selected partner catalog export. `playgama.js` creates searchable game cards, and `playgama-play.html` embeds each selected game on a page on this site. The partner game page does not load AdSense. The games are served by Playgama and its game partners, not hosted by this repository.
+`playgama-games.json` contains 311 partner games: the original 61 plus 250 more from the signed-in Playgama catalog export. `playgama.js` creates searchable game cards and `arcade-player.html` plays the selected game on this site. The games are served by Playgama and its game partners, not hosted by this repository.
 
 ## Advertising
 
-The homepage and player have reserved third-party display-ad placements. They stay inactive until the site is approved by an additional ad provider and its exact unit code is installed. See [AD-NETWORK-SETUP.md](AD-NETWORK-SETUP.md) for the setup steps and `ads.txt` guidance. Do not guess seller records or publisher IDs.
+The homepage and player have reserved third-party display-ad placements. They stay inactive until the site is approved by an additional ad provider and its exact unit code is installed. See [AD-NETWORK-SETUP.md](AD-NETWORK-SETUP.md) and [PARTNER-NETWORK-SETUP.md](PARTNER-NETWORK-SETUP.md) for network setup and `ads.txt` guidance. Do not guess seller records or publisher IDs.
+
 
