@@ -66,8 +66,8 @@
     shelves.forEach((shelf, index) => {
       if (!shelf) return;
       const candidates = [...owned.filter(game => game.id !== gameId), ...partnerGames.filter(game => String(game.id) !== String(partnerId))];
-      const offset = [0, 3, 6][index];
-      const amount = [3, 3, 10][index];
+      const offset = [0, 5, 10][index];
+      const amount = [5, 5, 18][index];
       candidates.slice(offset, offset + amount).forEach(game => shelf.append(makeRecommendation(game, game.emoji ? 'owned' : 'partner')));
     });
   }

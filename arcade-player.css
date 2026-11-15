@@ -100,5 +100,7 @@ body{background:linear-gradient(135deg,#75e6d8 0%,#a8f0e6 55%,#d4faf1 100%)}
 .player-footer{color:#3e6b76}
 .player-footer a{color:#214e62}
 .ad-slot{border-color:#ffffffb5;background:#ffffff8f;color:#426e78}
+.side-rail .recommendation-list{max-height:calc(100vh - 150px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.network-ad-slot{min-height:110px;margin-top:12px;border-color:#62c9bd;background:#ffffff85;color:#426e78}
 @media(max-width:1000px){.game-actionbar{min-height:50px;flex-basis:50px;padding-inline:7px}.game-frame-wrap{height:calc(100% - 54px)}}
 @media(max-width:680px){.game-frame-wrap{height:calc(100% - 52px)}.game-actionbar{min-height:48px;flex-basis:48px;border-radius:0 0 12px 12px}.game-action-title{font-size:12px}.game-action-title>span{width:33px;height:33px;font-size:20px}.game-action{min-width:43px;padding:4px;font-size:18px}.game-action span{font-size:7px}}

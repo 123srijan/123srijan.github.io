@@ -25,3 +25,7 @@ An original browser arcade hosted on GitHub Pages. Every game card opens a game 
 
 `playgama-games.json` contains the selected partner catalog export. `playgama.js` creates searchable game cards, and `playgama-play.html` embeds each selected game on a page on this site. The partner game page does not load AdSense. The games are served by Playgama and its game partners, not hosted by this repository.
 
+## Advertising
+
+The homepage and player have reserved third-party display-ad placements. They stay inactive until the site is approved by an additional ad provider and its exact unit code is installed. See [AD-NETWORK-SETUP.md](AD-NETWORK-SETUP.md) for the setup steps and `ads.txt` guidance. Do not guess seller records or publisher IDs.
+
