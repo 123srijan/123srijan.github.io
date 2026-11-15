@@ -7,7 +7,12 @@
 
   function render() {
     const query = search.value.trim().toLowerCase();
-    const shown = examples.filter(example => `${example.name} ${example.categories.join(' ')}`.toLowerCase().includes(query));
+    const shown = examples.filter(example => {
+      const categories = Array.isArray(example.categories)
+        ? example.categories.join(' ')
+        : (example.categories || '');
+      return `${example.name} ${categories}`.toLowerCase().includes(query);
+    });
     grid.replaceChildren();
     for (const example of shown) {
       const card = document.createElement('article');
