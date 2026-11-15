@@ -160,5 +160,9 @@ body{background:radial-gradient(ellipse at 12% 4%,#f4ffff 0 10%,transparent 34%)
 .partner-status{padding:16px;border:1px solid #e6caa4;border-radius:12px;background:#fff8e8;color:#70562d;font-size:13px}
 .home-network-ad{width:min(970px,100%);min-height:90px;margin:26px auto 8px;border:1px dashed #4dbeb1;background:#ffffff8c;color:#426e78}
 .adsense-slot{width:min(970px,100%);min-height:90px;margin:26px auto 22px;border:1px dashed #4dbeb1;border-radius:12px;background:#ffffff8c;color:#426e78}
+.catalog-ad-tile{grid-column:1/-1;min-width:0;animation:none}
+.catalog-ad-tile[hidden]{display:none}
+.catalog-ad-slot{width:min(970px,100%);min-height:90px;margin:10px auto 14px;border-style:dashed;background:#ffffffa8}
+@media(max-width:760px){.catalog-ad-slot{min-height:100px;margin:8px auto 10px}}
 .art-firefly{background:radial-gradient(circle at 48% 54%,#fff3ab 0 3%,#eed66c55 5%,transparent 24%),radial-gradient(circle at 75% 22%,#f5e9ac 0 4%,transparent 5%),linear-gradient(145deg,#26345d,#1a655c 58%,#132d3a)!important}
 .art-firefly:after{content:"✦  ·  ✧  ·  ✦";position:absolute;inset:auto 12px 15px;color:#fff5b5;font-size:14px;letter-spacing:.8em;text-shadow:0 0 15px #fff4a5}

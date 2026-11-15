@@ -61,6 +61,19 @@
       }
       syncTile(card, tile);
     }
+    // Two optional display-ad spaces break up the long catalog. They remain
+    // hidden for short searches and small personal collections.
+    const adPositions = [36, 136];
+    document.querySelectorAll('.catalog-ad-tile').forEach(tile => tile.remove());
+    for (const position of adPositions) {
+      const after = cards[position - 1]?.closest('.game-tile');
+      if (!after) continue;
+      const tile = document.createElement('aside');
+      tile.className = 'catalog-ad-tile';
+      tile.setAttribute('aria-label', 'Advertisement');
+      tile.innerHTML = '<div class="ad-slot catalog-ad-slot" data-ad-placement="catalog-inline"><span>ADVERTISEMENT</span></div>';
+      after.after(tile);
+    }
     if (allCount) allCount.textContent = String(cards.length);
     update();
   }
@@ -77,6 +90,7 @@
       if (show) visible++;
     }
     count.textContent = `${visible} ${visible === 1 ? 'game' : 'games'}`;
+    document.querySelectorAll('.catalog-ad-tile').forEach(tile => { tile.hidden = visible < 24; });
     empty.hidden = visible !== 0;
     clear.hidden = query.length === 0;
   }

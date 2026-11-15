@@ -28,7 +28,7 @@ An original browser arcade hosted on GitHub Pages. Every game card opens a game 
 
 ## Advertising
 
-The homepage has two reserved AdSense display-ad placements. They stay inactive until a real Google ad-unit ID is installed. Gameplay pages have no ad units. See [AD-NETWORK-SETUP.md](AD-NETWORK-SETUP.md) for the AdSense-first plan and [PARTNER-NETWORK-SETUP.md](PARTNER-NETWORK-SETUP.md) for partner catalog details.
+The homepage has four reserved display-ad placements. Game pages have one more space below recommendations or below the mini-game board, well away from active play. All are inactive placeholders until real ad units are installed; they do not earn revenue yet. See [AD-NETWORK-SETUP.md](AD-NETWORK-SETUP.md) for the AdSense-first plan and [PARTNER-NETWORK-SETUP.md](PARTNER-NETWORK-SETUP.md) for partner catalog details.
 
 
 
