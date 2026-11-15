@@ -12,6 +12,22 @@
   let library = {};
   try { library = JSON.parse(localStorage.getItem(storageKey) || '{}') || {}; } catch { library = {}; }
   const allCount = document.querySelector('[data-filter=all] span');
+  function mixCatalogCards() {
+    const grid = document.querySelector('#gameGrid');
+    if (!grid) return;
+    const originals = cards.filter(card => !card.classList.contains('partner-game-card'));
+    const partners = cards.filter(card => card.classList.contains('partner-game-card'));
+    const mixed = [];
+    for (let i = 0; i < Math.max(originals.length, partners.length); i++) {
+      if (originals[i]) mixed.push(originals[i]);
+      if (partners[i]) mixed.push(partners[i]);
+    }
+    for (const card of mixed) {
+      const tile = card.closest('.game-tile');
+      if (tile) grid.append(tile);
+    }
+    cards = mixed;
+  }
   function collectCards() {
     cards = [...document.querySelectorAll('.game-card')];
     for (const card of cards) {
@@ -61,6 +77,7 @@
       }
       syncTile(card, tile);
     }
+    mixCatalogCards();
     // Two optional display-ad spaces break up the long catalog. They remain
     // hidden for short searches and small personal collections.
     const adPositions = [36, 136];
@@ -84,7 +101,8 @@
       const matchesText = `${card.dataset.name} ${card.dataset.categories}`.toLowerCase().includes(query);
       const matchesCategory = active === 'all' || card.dataset.categories.split(' ').includes(active);
       const saved = library[card.dataset.gameId] || {};
-      const matchesCollection = collection === 'all' || (collection === 'favorites' ? saved.favorite : saved.reaction === collection);
+      const reactionFilter = collection === 'liked' ? 'like' : collection === 'disliked' ? 'dislike' : collection;
+      const matchesCollection = collection === 'all' || (collection === 'favorites' ? saved.favorite : saved.reaction === reactionFilter);
       const show = matchesText && matchesCategory && matchesCollection;
       card.closest('.game-tile')?.classList.toggle('is-filtered-out', !show);
       if (show) visible++;

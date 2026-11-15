@@ -70,10 +70,16 @@
     const shelves = ['#leftRecommendations','#rightRecommendations','#bottomRecommendations'].map(selector => document.querySelector(selector));
     shelves.forEach((shelf, index) => {
       if (!shelf) return;
-      const candidates = [...owned.filter(game => game.id !== gameId), ...partnerGames.filter(game => String(game.id) !== String(partnerId)), ...miniGames.filter(game => game.id !== miniId)];
+      const originalGames = [...owned.filter(game => game.id !== gameId), ...miniGames.filter(game => game.id !== miniId)];
+      const partnerPicks = partnerGames.filter(game => String(game.id) !== String(partnerId));
+      const candidates = [];
+      for (let i = 0; i < Math.max(originalGames.length, partnerPicks.length); i++) {
+        if (originalGames[i]) candidates.push({ game: originalGames[i], kind: 'owned' });
+        if (partnerPicks[i]) candidates.push({ game: partnerPicks[i], kind: 'partner' });
+      }
       const offset = [0, 5, 10][index];
       const amount = [5, 5, 18][index];
-      candidates.slice(offset, offset + amount).forEach(game => shelf.append(makeRecommendation(game, game.emoji ? 'owned' : 'partner')));
+      candidates.slice(offset, offset + amount).forEach(item => shelf.append(makeRecommendation(item.game, item.kind)));
     });
   }
   function simplifyOwnedGame() {

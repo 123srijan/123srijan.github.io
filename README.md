@@ -27,6 +27,10 @@ An original browser arcade hosted on GitHub Pages. Every game card opens a game 
 
 `playgama-games.json` contains 311 partner games: the original 61 plus 250 more from the signed-in Playgama catalog export. `playgama.js` creates searchable game cards and `arcade-player.html` plays the selected game on this site. The games are served by Playgama and its game partners, not hosted by this repository.
 
+## GDevelop open-source examples
+
+`gdevelop-examples.html` is a searchable directory of the 120 free GDevelop examples listed in its official catalog. The page is branded as part of GameBox Arcade, but links to each original GDevelop project page for creator and license details. These entries are not local HTML5 game builds and are not labeled as GameBox originals. Before exporting any example into this site, review its individual license and asset terms, retain required credits, and verify the resulting build.
+
 ## Advertising
 
 The homepage has four reserved display-ad placements. Game pages have one more space below recommendations or below the mini-game board, well away from active play. All are inactive placeholders until real ad units are installed; they do not earn revenue yet. See [AD-NETWORK-SETUP.md](AD-NETWORK-SETUP.md) for the AdSense-first plan and [PARTNER-NETWORK-SETUP.md](PARTNER-NETWORK-SETUP.md) for partner catalog details.
