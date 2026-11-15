@@ -31,3 +31,9 @@ An original browser arcade hosted on GitHub Pages. Every game card opens a game 
 The homepage has two reserved AdSense display-ad placements. They stay inactive until a real Google ad-unit ID is installed. Gameplay pages have no ad units. See [AD-NETWORK-SETUP.md](AD-NETWORK-SETUP.md) for the AdSense-first plan and [PARTNER-NETWORK-SETUP.md](PARTNER-NETWORK-SETUP.md) for partner catalog details.
 
 
+
+## Original mini-game collection
+
+The arcade now includes more than 50 original browser games. Forty lightweight, animated mini-games share a small set of reusable mechanics (tap, catch, dodge, memory, pairs, timing, and reaction) with distinct names, themes, colors, and local best scores. Each mini-game has its own playable link from the home page.
+
+Star Catcher, Bubble Pop Party, Fruit Flick, Cookie Catch, Meteor Dodge, Garden Dash, Penguin Paddle, Rocket Raccoon Run, Rainbow Runner, Coral Reef Dash, Pixel Memory, Starry Sequence, Color Comet, Music Memo, Gem Garden, Pocket Pairs, Ocean Pairs, Snack Match, Dino Match, Space Pairs, Perfect Pounce, Drum Beat Dash, Ice Cream Scoop, Goal Line Glory, Neon Stoplight, Quick Click Critter, Lightning Tap, Robot Reflex, Panda Pop, Cherry Chase, Sky Bubble Basket, Turtle Treasure, Cloud Catcher, Candy Catcher, Firework Frenzy, Little Lanterns, Jelly Jump, Pumpkin Popper, Snowflake Spark, Magic Mushroom Mix, Tiny Treasure Tap.
