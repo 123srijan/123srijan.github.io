@@ -1,13 +1,20 @@
 <!doctype html>
 <html lang="en">
-<head>
+<head>  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KS1NVMEJ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4KS1NVMEJ7');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111827">
   <meta name="description" content="Play a partner game inside GameBox Arcade.">
   <title>Partner game — GameBox Arcade</title>
-  <link rel="stylesheet" href="playgama-play.css">
-  <script src="playgama-play.js" defer></script>
+  <link rel="stylesheet" href="playgama-play.css?v=20261115f">
+  <script src="playgama-play.js?v=20261115f" defer></script>
 </head>
 <body>
   <header class="play-header"><a href="index.html#games">← <span>Back to arcade</span></a><strong id="gameTitle">Loading game…</strong><span class="play-label">PARTNER GAME</span></header>
@@ -16,6 +23,7 @@
       <iframe id="gameFrame" title="Partner game" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
     </div>
     <p class="play-message" id="playMessage" role="status">Loading the game…</p>
+    <a class="play-message" id="openPartnerGame" target="_blank" rel="noopener noreferrer" hidden>Open this game on the partner site ↗</a>
   </main>
   <footer class="play-footer"><a href="index.html#games">GameBox Arcade</a><span>Game powered by Playgama and its game partners</span></footer>
 </body>
