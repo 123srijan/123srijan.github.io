@@ -18,6 +18,7 @@ An original browser arcade hosted on GitHub Pages. Every game card opens a game 
 - tic-tac-toe/: player versus a blocking/winning bot
 - territory-trail/: original trail and territory game
 - firefly-frenzy/: original 30-second night-garden catching game with animated fireflies and synthesized sound effects
+- turbo-drift/: original multi-track racing game with selectable cars, quick races, time trials, and a championship
 - ludo-league/: original dice-and-token board game
 - happy-glass/: original draw-to-guide-water puzzle
 - privacy.html: disclosures for local game progress and Google services

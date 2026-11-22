@@ -9,7 +9,8 @@
     { id:'fruit-swipe', title:'Fruit Swipe', emoji:'🍉', a:'#e55155', b:'#f2a346', categories:['action','arcade'] },
     { id:'tic-tac-toe', title:'Tic Tac Trio', emoji:'⭕', a:'#3975ca', b:'#7c5bd2', categories:['puzzle'] },
     { id:'territory-trail', title:'Territory Trail', emoji:'🗺️', a:'#258b86', b:'#59bd74', categories:['action','puzzle'] },
-    { id:'firefly-frenzy', title:'Firefly Frenzy', emoji:'✨', a:'#203d68', b:'#53a890', categories:['action','arcade'] }
+    { id:'firefly-frenzy', title:'Firefly Frenzy', emoji:'✨', a:'#203d68', b:'#53a890', categories:['action','arcade'] },
+    { id:'turbo-drift', title:'Turbo Drift', emoji:'🏎️', a:'#173b55', b:'#ff765d', categories:['sports','arcade'] }
   ];
   const routes = Object.fromEntries(owned.map(game => [game.id, `${game.id === 'tower-builder' ? 'stack-panic/' : game.id === 'fruit-swipe' || game.id === 'tic-tac-toe' || game.id === 'territory-trail' ? `play.html?game=${game.id}` : `${game.id}/`}`]));
   const params = new URLSearchParams(location.search);

@@ -166,3 +166,13 @@ body{background:radial-gradient(ellipse at 12% 4%,#f4ffff 0 10%,transparent 34%)
 @media(max-width:760px){.catalog-ad-slot{min-height:100px;margin:8px auto 10px}}
 .art-firefly{background:radial-gradient(circle at 48% 54%,#fff3ab 0 3%,#eed66c55 5%,transparent 24%),radial-gradient(circle at 75% 22%,#f5e9ac 0 4%,transparent 5%),linear-gradient(145deg,#26345d,#1a655c 58%,#132d3a)!important}
 .art-firefly:after{content:"✦  ·  ✧  ·  ✦";position:absolute;inset:auto 12px 15px;color:#fff5b5;font-size:14px;letter-spacing:.8em;text-shadow:0 0 15px #fff4a5}
+.art-turbo{overflow:hidden;color:#fff;background:radial-gradient(ellipse at 50% 118%,#ff9b4c 0 4%,transparent 48%),linear-gradient(150deg,#1a3155,#112846 54%,#ef5b4f)!important}
+.art-turbo:before{inset:42% -20% -45%;border:8px solid #ffffff42;border-radius:50%;background:repeating-conic-gradient(from 0deg at 50% 50%,#ffffff15 0 2deg,transparent 2deg 7deg);transform:rotate(-13deg)}
+.art-turbo:after{content:"";position:absolute;top:0;right:18%;width:8px;height:100%;background:repeating-linear-gradient(180deg,#fff 0 13px,transparent 13px 27px);opacity:.8;transform:rotate(18deg)}
+.art-turbo .turbo-logo{position:absolute;left:12px;top:14px;font-size:clamp(17px,2vw,29px);font-style:italic;letter-spacing:.04em;transform:skew(-9deg) rotate(-5deg)}
+.turbo-car{position:absolute;z-index:3;filter:drop-shadow(0 7px 4px #090f1a99);animation:turboCruise 1.6s ease-in-out infinite}
+.turbo-car-one{right:16%;bottom:18%;font-size:clamp(34px,5vw,64px);transform:rotate(-13deg)}
+.turbo-car-two{right:48%;bottom:8%;font-size:clamp(22px,3vw,38px);animation-delay:-.7s;opacity:.9}
+.turbo-lane{position:absolute;z-index:1;left:54%;top:52%;width:48%;height:3px;background:#fff9;transform:rotate(-18deg);box-shadow:0 0 10px #ffffff99}
+@keyframes turboCruise{0%,100%{translate:0 0}50%{translate:-4px -7px}}
+@media(prefers-reduced-motion:reduce){.turbo-car{animation:none}}
