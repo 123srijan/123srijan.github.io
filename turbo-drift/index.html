@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turbo Drift – Browser Racing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="menu" class="screen">
+    <h1>Turbo Drift</h1>
+    <p class="tagline">A neon arcade race. Hold FORWARD to drive, BACKWARD to reverse, and LEFT / RIGHT to steer.</p>
+    <div class="setupGrid" aria-label="Race setup">
+      <label>CAR<select id="carSelect"></select></label>
+      <label>TRACK<select id="trackSelect"></select></label>
+      <label>AI LEVEL<select id="difficultySelect"><option value="0.82">Easy</option><option value="1" selected>Normal</option><option value="1.16">Hard</option></select></label>
+    </div>
+    <button id="quickRaceBtn">Quick Race</button>
+    <button id="timeTrialBtn">Time Trial</button>
+    <button id="championshipBtn">Championship</button>
+    <button id="howToPlayBtn">How to Play</button>
+  </main>
+
+  <section id="howToPlay" class="screen hidden" aria-labelledby="howToPlayTitle">
+    <h2 id="howToPlayTitle">How to Play</h2>
+    <p><strong>Move:</strong> Hold FORWARD or W / Up. Hold BACKWARD or S / Down to slow, then reverse. Hold LEFT / RIGHT or A / D to steer.</p>
+    <p><strong>Boost:</strong> Hold BOOST, Space, or Shift for a burst of speed. The blue meter refills while you drive without boost.</p>
+    <p><strong>Reverse:</strong> Hold BACKWARD; it brakes first, then reverses automatically. Or tap R near a stop to select Reverse. AUTO shifts for you; MANUAL lets you use gears 1–5.</p>
+    <p>Cross the checkered line to complete a lap. Grass slows you down, and collisions cost speed. Escape or PAUSE stops the race.</p>
+    <button class="backBtn">Back to Menu</button>
+  </section>
+
+  <canvas id="gameCanvas" aria-label="Turbo Drift race track"></canvas>
+
+  <section id="hud" class="hidden" aria-label="Race information">
+    <div id="lapInfo">Lap: 0 / 3</div>
+    <div id="positionInfo">Pos: 1 / 5</div>
+    <div id="timer">0:00</div>
+    <div id="bestInfo">BEST --</div>
+    <div id="speedInfo">0 km/h</div>
+    <div id="carInfo">Speedster</div>
+    <div class="gearPanel" aria-label="Transmission controls">
+      <span class="gearReadout">GEAR <strong id="gearInfo">1</strong></span>
+      <button id="gearDownBtn" type="button" aria-label="Shift down">−</button>
+      <button id="gearUpBtn" type="button" aria-label="Shift up">+</button>
+      <button id="reverseBtn" type="button" aria-label="Select reverse">R REV</button>
+      <button id="neutralBtn" type="button" aria-label="Select neutral">N</button>
+      <button id="transmissionBtn" type="button" aria-label="Switch to manual transmission">AUTO ✓</button>
+    </div>
+    <div id="rpmMeter" aria-label="Engine revs"><span id="rpmFill"></span></div>
+    <div id="boostMeter" aria-label="Boost remaining"><strong>BOOST</strong><span id="boostFill"></span></div>
+    <div id="gearNotice" class="hidden" role="status"></div>
+    <button id="pauseBtn" type="button" aria-label="Pause race">PAUSE</button>
+  </section>
+
+  <nav id="driveControls" class="hidden" aria-label="Driving controls">
+    <button data-drive="left" type="button" aria-label="Steer left">◀ LEFT</button>
+    <button data-drive="backward" type="button" aria-label="Drive backward">▼ BACKWARD</button>
+    <button data-drive="boost" type="button" aria-label="Boost speed">BOOST</button>
+    <button data-drive="forward" type="button" aria-label="Drive forward">▲ FORWARD</button>
+    <button data-drive="right" type="button" aria-label="Steer right">RIGHT ▶</button>
+  </nav>
+
+  <section id="resultScreen" class="screen hidden" aria-labelledby="resultsTitle">
+    <h2 id="resultsTitle">Race Results</h2>
+    <pre id="results"></pre>
+    <button class="restartBtn">Restart</button>
+    <button class="menuBtn">Main Menu</button>
+  </section>
+
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

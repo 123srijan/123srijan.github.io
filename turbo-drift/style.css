@@ -1,0 +1,402 @@
+/* Turbo Drift — layout and presentation */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #050b13;
+  color: #eee;
+}
+
+canvas {
+  display: block;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #222;
+  touch-action: none;
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: radial-gradient(ellipse at 50% 42%, rgba(17, 34, 54, 0.78), rgba(3, 8, 15, 0.92));
+  backdrop-filter: blur(3px);
+  z-index: 10;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 8px;
+  color: #ffe076;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 0 14px rgba(255, 193, 58, 0.62), 0 0 38px rgba(255, 104, 29, 0.32);
+}
+
+.tagline {
+  margin: 0 0 20px;
+  color: #ddd;
+  max-width: 760px;
+  line-height: 1.5;
+}
+
+.setupGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 8px 0 18px;
+}
+
+.setupGrid label {
+  display: grid;
+  gap: 6px;
+  color: #93ddff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-align: left;
+}
+
+.setupGrid select {
+  min-width: 148px;
+  padding: 10px 34px 10px 12px;
+  border: 1px solid rgba(115, 216, 255, 0.42);
+  border-radius: 9px;
+  background: rgba(7, 17, 29, 0.92);
+  color: #f4fbff;
+  font: inherit;
+  letter-spacing: 0;
+  cursor: pointer;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), 0 0 14px rgba(52, 195, 255, 0.08);
+}
+
+.setupGrid select:focus-visible {
+  outline: 2px solid #5ee5ff;
+  outline-offset: 2px;
+}
+
+#howToPlay p {
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+#menu > button {
+  min-width: min(250px, 70vw);
+}
+
+#quickRaceBtn {
+  border-color: rgba(255, 218, 103, 0.82);
+  background: linear-gradient(180deg, #a45e1c, #63330f);
+  color: #fff2c1;
+  box-shadow: 0 0 22px rgba(255, 148, 42, 0.25);
+}
+
+.hidden {
+  display: none;
+}
+
+#hud.hidden {
+  display: none;
+}
+
+button {
+  padding: 12px 24px;
+  margin: 8px;
+  font-size: 1rem;
+  background: linear-gradient(180deg, #25354a, #111d2a);
+  border: 1px solid rgba(160, 202, 233, 0.45);
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3), inset 0 1px rgba(255, 255, 255, 0.1);
+  transition: transform 0.15s ease, background 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(180deg, #3a536d, #192d40);
+  box-shadow: 0 0 18px rgba(62, 194, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+button:focus-visible {
+  outline: 3px solid #ffcc45;
+  outline-offset: 2px;
+}
+
+#hud {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: #fff;
+  font-size: 1rem;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: calc(100vw - 16px);
+  pointer-events: none;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+#hud div {
+  padding: 8px 12px;
+  border: 1px solid rgba(161, 220, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(6, 15, 26, 0.82);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28), inset 0 1px rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
+}
+
+#hud button {
+  margin: 0;
+  padding: 8px 12px;
+  pointer-events: auto;
+}
+
+.gearPanel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-color: rgba(90, 210, 255, 0.38) !important;
+}
+
+.gearReadout {
+  min-width: 62px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.gearReadout strong {
+  color: #ffcc45;
+  font-size: 1.25rem;
+}
+
+#gearDownBtn,
+#gearUpBtn,
+#reverseBtn,
+#neutralBtn {
+  min-width: 38px;
+  font-weight: 700;
+}
+
+#gearNotice {
+  color: #ffcc75;
+  font-size: 0.82rem;
+}
+
+#reverseBtn {
+  color: #ff9f72;
+  min-width: 62px;
+}
+
+#rpmMeter {
+  width: 78px;
+  height: 8px;
+  padding: 2px !important;
+  overflow: hidden;
+  background: #17191b !important;
+}
+
+#boostMeter {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 112px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #82eaff;
+}
+
+#boostFill {
+  display: block;
+  flex: 1;
+  width: auto;
+  min-width: 26px;
+  height: 7px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #15a7ff, #61f2ff);
+  box-shadow: 0 0 10px rgba(71, 220, 255, 0.72);
+  transition: width 100ms linear;
+}
+
+#rpmFill {
+  display: block;
+  width: 0;
+  height: 100%;
+  padding: 0 !important;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #7bdf73, #ffcf50, #f45d50);
+  transition: width 100ms linear;
+}
+
+#driveControls {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  z-index: 6;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  pointer-events: none;
+  padding: 0 3px;
+  box-sizing: border-box;
+}
+
+#driveControls.hidden {
+  display: none;
+}
+
+#driveControls button {
+  min-width: 76px;
+  min-height: 58px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid rgba(220, 242, 255, 0.62);
+  border-radius: 16px;
+  background: rgba(8, 17, 29, 0.82);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  touch-action: none;
+  user-select: none;
+  pointer-events: auto;
+  backdrop-filter: blur(8px);
+}
+
+#driveControls button[data-drive="forward"],
+#driveControls button[data-drive="boost"] {
+  width: 88px;
+  height: 68px;
+  border-color: #96e98a;
+  color: #b6ff9f;
+  box-shadow: 0 0 18px rgba(127, 255, 104, 0.22);
+}
+
+#driveControls button[data-drive="boost"] {
+  border-color: #4adfff;
+  color: #a6f3ff;
+  box-shadow: 0 0 18px rgba(55, 203, 255, 0.23);
+}
+
+#driveControls button[data-drive="backward"] {
+  min-width: 100px;
+  border-color: #ff8e80;
+  color: #ffaaa0;
+}
+
+#driveControls button[data-drive="left"],
+#driveControls button[data-drive="right"] {
+  min-width: 104px;
+}
+
+#driveControls button[data-drive="left"],
+#driveControls button[data-drive="right"] {
+  border-color: rgba(123, 198, 255, 0.8);
+  color: #d0eeff;
+}
+
+#driveControls button.pressed {
+  transform: scale(0.92);
+  background: rgba(255, 204, 69, 0.42);
+}
+
+#pauseBtn {
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  #hud {
+    font-size: 0.86rem;
+  }
+
+  #hud div {
+    padding: 5px 7px;
+  }
+
+  #hud button {
+    padding: 6px 8px;
+  }
+
+  .gearReadout {
+    min-width: 48px;
+  }
+
+  #rpmMeter {
+    width: 54px;
+  }
+
+  #boostMeter {
+    min-width: 82px;
+  }
+
+  .setupGrid {
+    gap: 7px;
+  }
+
+  .setupGrid label {
+    font-size: 0.62rem;
+  }
+
+  .setupGrid select {
+    min-width: 98px;
+    padding: 8px 24px 8px 8px;
+    font-size: 0.8rem;
+  }
+
+  #driveControls {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  #driveControls button {
+    min-width: 58px;
+    min-height: 52px;
+    padding: 5px 6px;
+    border-radius: 13px;
+    font-size: 0.65rem;
+    letter-spacing: 0;
+  }
+
+  #driveControls button[data-drive="left"],
+  #driveControls button[data-drive="right"] {
+    min-width: 62px;
+  }
+
+  #driveControls button[data-drive="backward"] {
+    min-width: 78px;
+  }
+
+  #driveControls button[data-drive="forward"],
+  #driveControls button[data-drive="boost"] {
+    width: 62px;
+    height: 58px;
+  }
+}
